@@ -1,0 +1,1 @@
+function r(e){if(e.startsWith("file://"))return e;const t=/^([a-zA-Z]:|\\\\)/.test(e)?e.replace(/\\/g,"/"):e,i=/^[a-zA-Z]:\//.test(t)?"file:///":"file://",n=encodeURI(t).replace(/#/g,"%23").replace(/\?/g,"%3F");return`${i}${n}`}export{r as b};

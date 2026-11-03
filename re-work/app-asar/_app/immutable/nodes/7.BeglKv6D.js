@@ -1,0 +1,1 @@
+import{h as f,i as m,k as p,c as a,d as c,j as v,r as h,f as u}from"../chunks/BY3kRY6U.js";import{T as _}from"../chunks/BUrrbkc6.js";var $=u('<div class="flex h-full w-full min-w-0 flex-col"><!></div>');function g(s,t){var r=f(),e=m(r);p(e,()=>_,(l,i)=>{i(l,{children:(n,x)=>{var o=$(),d=c(o);v(d,()=>t.children),h(o),a(n,o)},$$slots:{default:!0}})}),a(s,r)}export{g as component};

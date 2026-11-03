@@ -1,0 +1,1 @@
+const t={x:10,top:3,bottom:24},E={x:10,top:8,bottom:12},a={x:14,top:12,bottom:40},T=236,s=320,_=40,o=6,N=T+s+o+2*_,S=140,n={DRAG_THRESHOLD_PX:5,DETACH_THRESHOLD_PX:80,REATTACH_THRESHOLD_PX:25};export{_ as S,n as T,S as W,T as a,E as b,s as c,o as d,t as e,N as f,a as t};

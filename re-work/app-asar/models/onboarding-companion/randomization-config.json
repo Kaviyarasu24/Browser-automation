@@ -1,0 +1,584 @@
+{
+  "defaultPreset": "normal",
+  "conditionalExclusions": [
+    {
+      "when": {
+        "eyes": ["eye_cyclops*"]
+      },
+      "exclude": {
+        "eye_accessory": ["*"]
+      }
+    }
+  ],
+  "masterRanges": {
+    "head": {
+      "size": {
+        "min": 0.2,
+        "max": 0.8
+      }
+    },
+    "ear": {
+      "zOffset": {
+        "min": -0.06,
+        "max": 0.06
+      }
+    },
+    "eyes": {
+      "x": {
+        "min": 0.4,
+        "max": 0.62
+      },
+      "z": {
+        "min": 0.4,
+        "max": 0.75
+      },
+      "size": {
+        "min": 0.4,
+        "max": 0.65
+      }
+    },
+    "mouth": {
+      "z": {
+        "min": 0.15,
+        "max": 0.35
+      },
+      "size": {
+        "min": 0.32,
+        "max": 0.58
+      }
+    },
+    "pupil": {
+      "size": {
+        "min": 0.24,
+        "max": 0.46
+      }
+    },
+    "eyebrow": {
+      "size": {
+        "min": 0.32,
+        "max": 0.58
+      }
+    },
+    "eye_accessory": {
+      "size": {
+        "min": 0.75,
+        "max": 0.75
+      }
+    }
+  },
+  "overridesByHead": {},
+  "presets": {
+    "normal": {
+      "label": "Normal",
+      "description": "A clean everyday companion with familiar features and very few accessories.",
+      "enabledParts": {
+        "head": ["head_narrow_01", "head_oval", "head_round", "head_square"],
+        "eyes": ["eye_flat", "eye_round", "eye_sharp"],
+        "pupil": ["pupil_0", "pupil_cat", "pupil_circle"],
+        "mouth": ["mouth_smile", "mouth_smirk"],
+        "eyebrow": ["none"],
+        "hat": ["none"],
+        "hair": [
+          "hair_01",
+          "hair_02",
+          "hair_04",
+          "hair_05",
+          "hair_06",
+          "hair_07",
+          "hair_08",
+          "hair_bangs",
+          "hair_bowl",
+          "hair_mullet",
+          "hair_shelley",
+          "hair_space_buns"
+        ],
+        "eye_accessory": ["none", "round", "square"],
+        "ear_accessory": ["none"]
+      },
+      "excludedParts": {},
+      "probabilities": {
+        "eyes": {
+          "eye_round_pupil_cat": 0.06,
+          "eye_sharp_pupil_cat": 0.07
+        },
+        "eye_accessory": {
+          "round": 0.16,
+          "square": 0.16,
+          "none": 0.68
+        }
+      },
+      "doubleEyesProbability": 0,
+      "masterRanges": {
+        "face": {
+          "mouthGap": {
+            "min": 0.14,
+            "max": 0.38
+          }
+        },
+        "head": {
+          "size": {
+            "min": 0.5,
+            "max": 0.6
+          }
+        },
+        "ear": {
+          "zOffset": {
+            "min": -0.06,
+            "max": 0.06
+          }
+        },
+        "eyes": {
+          "x": {
+            "min": 0.4,
+            "max": 0.52
+          },
+          "z": {
+            "min": 0.45,
+            "max": 0.62
+          },
+          "size": {
+            "min": 0.4,
+            "max": 0.65
+          }
+        },
+        "mouth": {
+          "z": {
+            "min": 0.1,
+            "max": 0.6
+          },
+          "size": {
+            "min": 0.37,
+            "max": 0.37
+          }
+        },
+        "pupil": {
+          "size": {
+            "min": 0.24,
+            "max": 0.4
+          }
+        },
+        "eyebrow": {
+          "size": {
+            "min": 0.34,
+            "max": 0.54
+          },
+          "rotationY": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        "eye_accessory": {
+          "size": {
+            "min": 0.75,
+            "max": 0.75
+          }
+        }
+      },
+      "overridesByHead": {
+        "head_square": {
+          "face": {
+            "mouthGap": {
+              "min": 0.14,
+              "max": 0.35
+            }
+          }
+        }
+      }
+    },
+    "cute": {
+      "label": "Cute",
+      "description": "A slightly girlier take on Normal with soft shapes and playful details.",
+      "enabledParts": {
+        "head": ["head_oval", "head_round"],
+        "eyes": ["eye_flat_double_lash", "eye_round", "eye_round_double_lash", "eye_round_lash"],
+        "pupil": ["pupil_0", "pupil_circle", "pupil_cat", "pupil_heart"],
+        "mouth": ["mouth_smile", "mouth_smirk"],
+        "eyebrow": ["eyebrow_0", "eyebrow_1"],
+        "hat": ["headband", "beanie", "none"],
+        "hair": ["hair_05", "hair_07", "hair_08", "hair_bangs", "hair_shelley", "hair_space_buns"],
+        "eye_accessory": ["none", "round"],
+        "ear_accessory": [
+          "earrings_big_hoop",
+          "earrings_double",
+          "earrings_hoop",
+          "earrings_star",
+          "none"
+        ]
+      },
+      "probabilities": {
+        "eyes": {
+          "eye_round_pupil_heart": 0.14,
+          "eye_round_lash_pupil_heart": 0.16,
+          "eye_round_pupil_cat": 0.1,
+          "eye_round_double_lash_pupil_cat": 0.1
+        },
+        "hat": {
+          "headband": 0.28,
+          "beanie": 0.14,
+          "none": 0.58
+        },
+        "hair": {
+          "hair_space_buns": 0.16
+        },
+        "eye_accessory": {
+          "round": 0.18,
+          "none": 0.82
+        },
+        "ear_accessory": {
+          "none": 0.72,
+          "earrings_star": 0.12
+        }
+      },
+      "doubleEyesProbability": 0,
+      "masterRanges": {
+        "face": {
+          "mouthGap": {
+            "min": 0.14,
+            "max": 0.38
+          }
+        },
+        "head": {
+          "size": {
+            "min": 0.5,
+            "max": 0.6
+          }
+        },
+        "ear": {
+          "zOffset": {
+            "min": -0.05,
+            "max": 0.07
+          }
+        },
+        "eyes": {
+          "x": {
+            "min": 0.4,
+            "max": 0.52
+          },
+          "z": {
+            "min": 0.4,
+            "max": 0.58
+          },
+          "size": {
+            "min": 0.66,
+            "max": 0.67
+          }
+        },
+        "mouth": {
+          "z": {
+            "min": 0.1,
+            "max": 0.6
+          },
+          "size": {
+            "min": 0.37,
+            "max": 0.37
+          }
+        },
+        "pupil": {
+          "size": {
+            "min": 0.24,
+            "max": 0.4
+          }
+        },
+        "eyebrow": {
+          "size": {
+            "min": 0.34,
+            "max": 0.54
+          },
+          "rotationY": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        "eye_accessory": {
+          "size": {
+            "min": 0.75,
+            "max": 0.75
+          }
+        }
+      },
+      "overridesByHead": {}
+    },
+    "weird": {
+      "label": "Weird",
+      "description": "An offbeat companion with occasional odd features and controlled proportions.",
+      "enabledParts": {
+        "head": ["head_narrow_01", "head_oblong", "head_oval", "head_round", "head_square"],
+        "eyes": [
+          "eye_cyclops",
+          "eye_cyclops_lash",
+          "eye_flat",
+          "eye_round",
+          "eye_round_double_lash",
+          "eye_sharp"
+        ],
+        "pupil": [
+          "pupil_0",
+          "pupil_circle",
+          "pupil_cat",
+          "pupil_rectangle_laying",
+          "pupil_rectangle_standing",
+          "pupil_triple"
+        ],
+        "mouth": ["mouth_neutral", "mouth_smile", "mouth_frown", "mouth_smirk", "none"],
+        "eyebrow": ["eyebrow_0", "eyebrow_1", "none"],
+        "hat": ["none", "beanie"],
+        "hair": [
+          "ant_antennas",
+          "hair_01",
+          "hair_02",
+          "hair_03",
+          "hair_04",
+          "hair_05",
+          "hair_06",
+          "hair_07",
+          "hair_08",
+          "hair_bangs",
+          "hair_bowl",
+          "hair_mullet",
+          "hair_shelley",
+          "hair_snail",
+          "hair_space_buns",
+          "horns",
+          "none"
+        ],
+        "eye_accessory": ["nanja", "none", "square"],
+        "ear_accessory": ["earrings_big_hoop", "earrings_double", "earrings_star", "none"]
+      },
+      "probabilities": {
+        "eyes": {
+          "eye_cyclops_pupil_circle": 0.08,
+          "eye_cyclops_lash_pupil_circle": 0.05,
+          "eye_round_pupil_triple": 0.06,
+          "eye_round_double_lash_pupil_triple": 0.05
+        },
+        "mouth": {
+          "mouth_neutral": 0.26,
+          "mouth_smile": 0.26,
+          "mouth_frown": 0.2,
+          "mouth_smirk": 0.2,
+          "none": 0.08
+        },
+        "eyebrow": {
+          "none": 0.2
+        },
+        "hat": {
+          "none": 0.88,
+          "beanie": 0.12
+        },
+        "hair": {
+          "ant_antennas": 0.06,
+          "hair_03": 0.08,
+          "hair_snail": 0.05,
+          "horns": 0.06,
+          "none": 0.08
+        },
+        "eye_accessory": {
+          "nanja": 0.08,
+          "square": 0.2,
+          "none": 0.72
+        },
+        "ear_accessory": {
+          "none": 0.5,
+          "earrings_double": 0.2
+        }
+      },
+      "doubleEyesProbability": 0.2,
+      "masterRanges": {
+        "face": {
+          "mouthGap": {
+            "min": 0.18,
+            "max": 0.4
+          }
+        },
+        "head": {
+          "size": {
+            "min": 0.32,
+            "max": 0.78
+          }
+        },
+        "ear": {
+          "zOffset": {
+            "min": -0.2,
+            "max": 0.12
+          }
+        },
+        "eyes": {
+          "x": {
+            "min": 0.3,
+            "max": 0.62
+          },
+          "z": {
+            "min": 0.3,
+            "max": 0.68
+          },
+          "size": {
+            "min": 0.34,
+            "max": 0.7
+          }
+        },
+        "mouth": {
+          "z": {
+            "min": 0.06,
+            "max": 0.58
+          },
+          "size": {
+            "min": 0.3,
+            "max": 0.6
+          }
+        },
+        "pupil": {
+          "size": {
+            "min": 0.22,
+            "max": 0.55
+          }
+        },
+        "eyebrow": {
+          "size": {
+            "min": 0.28,
+            "max": 0.62
+          },
+          "rotationY": {
+            "min": -10,
+            "max": 30
+          }
+        },
+        "eye_accessory": {
+          "size": {
+            "min": 0.6,
+            "max": 0.96
+          }
+        }
+      },
+      "overridesByHead": {}
+    },
+    "cool": {
+      "label": "Cool",
+      "description": "A laid-back take on Normal with confident features and sunglasses.",
+      "enabledParts": {
+        "head": ["head_narrow_01", "head_oblong", "head_oval", "head_round", "head_square"],
+        "eyes": ["eye_flat", "eye_round", "eye_sharp"],
+        "pupil": ["pupil_0", "pupil_cat", "pupil_circle", "pupil_rectangle_standing"],
+        "mouth": ["mouth_neutral", "mouth_smile", "mouth_frown", "mouth_smirk"],
+        "eyebrow": ["eyebrow_0", "eyebrow_1"],
+        "hat": ["none"],
+        "hair": [
+          "hair_02",
+          "hair_06",
+          "hair_07",
+          "hair_bangs",
+          "hair_bowl",
+          "hair_shelley",
+          "none"
+        ],
+        "eye_accessory": ["nanja", "none", "round", "square"],
+        "ear_accessory": ["none"]
+      },
+      "probabilities": {
+        "eyes": {
+          "eye_flat_pupil_rectangle_standing": 0.3,
+          "eye_sharp_pupil_cat": 0.24
+        },
+        "mouth": {
+          "mouth_neutral": 0.3,
+          "mouth_smile": 0.35,
+          "mouth_frown": 0.15,
+          "mouth_smirk": 0.2
+        },
+        "hat": {
+          "none": 1
+        },
+        "hair": {
+          "none": 0.08
+        },
+        "eye_accessory": {
+          "nanja": 0.45,
+          "round": 0.18,
+          "square": 0.17,
+          "none": 0.2
+        }
+      },
+      "doubleEyesProbability": 0,
+      "masterRanges": {
+        "face": {
+          "mouthGap": {
+            "min": 0.14,
+            "max": 0.36
+          }
+        },
+        "head": {
+          "size": {
+            "min": 0.5,
+            "max": 0.6
+          }
+        },
+        "ear": {
+          "zOffset": {
+            "min": -0.12,
+            "max": 0.08
+          }
+        },
+        "eyes": {
+          "x": {
+            "min": 0.4,
+            "max": 0.52
+          },
+          "z": {
+            "min": 0.3,
+            "max": 0.56
+          },
+          "size": {
+            "min": 0.66,
+            "max": 0.67
+          }
+        },
+        "mouth": {
+          "z": {
+            "min": 0.06,
+            "max": 0.6
+          },
+          "size": {
+            "min": 0.37,
+            "max": 0.37
+          }
+        },
+        "pupil": {
+          "size": {
+            "min": 0.24,
+            "max": 0.4
+          }
+        },
+        "eyebrow": {
+          "size": {
+            "min": 0.34,
+            "max": 0.54
+          },
+          "rotationY": {
+            "min": -4,
+            "max": 30
+          }
+        },
+        "eye_accessory": {
+          "size": {
+            "min": 0.75,
+            "max": 0.75
+          }
+        }
+      },
+      "overridesByHead": {
+        "head_square": {
+          "face": {
+            "mouthGap": {
+              "min": 0.14,
+              "max": 0.33
+            }
+          }
+        }
+      }
+    }
+  },
+  "excludedParts": {
+    "mouth": ["none"],
+    "eyebrow": ["none"]
+  },
+  "probabilities": {}
+}

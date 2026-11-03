@@ -1,0 +1,1 @@
+function s(t){if(t instanceof Error)return t.message;if(typeof t=="string")return t;if(typeof t=="object"&&t!==null){const e=t;for(const i of["message","error","error_description","description"]){const n=e[i];if(typeof n=="string"&&n.length>0)return n}try{return JSON.stringify(t)}catch{return String(t)}}return String(t)}export{s as g};

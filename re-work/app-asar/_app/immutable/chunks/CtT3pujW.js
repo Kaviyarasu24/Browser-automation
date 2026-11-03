@@ -1,0 +1,1 @@
+import{l as i,j as n,w as m,C as o,E as c,c as l,o as f,d as p,f as d,r as h}from"./BY3kRY6U.js";import{c as v}from"./9k9xcff1.js";var x=d('<main data-slot="browser-main"><!></main>');function _(e,s){i(s,!0);var a=x(),t=p(a);n(t,()=>s.children),h(a),m(r=>c(a,1,r),[()=>o(v("min-w-0 flex-1 px-8",s.class))]),l(e,a),f()}export{_ as N};

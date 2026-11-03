@@ -1,0 +1,1 @@
+async function n(r,t,i=`Timed out after ${t}ms`){let e;const o=new Promise((a,m)=>{e=setTimeout(()=>m(new Error(i)),t)});try{return await Promise.race([r,o])}finally{e&&clearTimeout(e)}}export{n as w};

@@ -1,0 +1,1 @@
+const c="[OffscreenDiagnostics]";function f(r,s={},o="info"){const e=Object.entries(s).map(([t,i])=>`${t}=${String(i)}`).join(" "),n=`${c} event=${r}${e?` ${e}`:""}`;if(o==="error"){console.error(n);return}if(o==="warn"){console.warn(n);return}console.info(n)}export{f as l};

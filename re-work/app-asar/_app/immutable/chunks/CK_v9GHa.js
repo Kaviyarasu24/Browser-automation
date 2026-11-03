@@ -1,0 +1,1 @@
+function r(e,n){return e.rendererGeneration===n.rendererGeneration&&e.treeRevision===n.treeRevision&&e.geometryRevision===n.geometryRevision}function i(e){return`${e.rendererGeneration}:${e.treeRevision}:${e.geometryRevision}`}export{i as e,r as s};

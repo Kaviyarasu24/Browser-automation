@@ -1,0 +1,1 @@
+import{l as t,o as n}from"./BY3kRY6U.js";import{p as a}from"./2KunAJxa.js";import{u as e}from"./DfbodBEg.js";function p(i,r){t(r,!0),a(()=>r.currentUrl,()=>r.loading||e.isWindowFullScreen||e.addressBarExpanded,o=>r.onOpenImport(o)),n()}export{p as default};

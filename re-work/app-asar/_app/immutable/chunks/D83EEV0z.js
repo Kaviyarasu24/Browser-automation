@@ -1,0 +1,1 @@
+import{o as s}from"./b5cypSQw.js";function l(o,i){const e=o.skillName.trim();e&&i.openChatFile({surface:o.surface,filePath:`/skills/${e}/SKILL.md`,companionId:o.companionId,sessionId:o.sessionId})}function a(o){l(o,{openChatFile:s})}export{a as openChatSkill};

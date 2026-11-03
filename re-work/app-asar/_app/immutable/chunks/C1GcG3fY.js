@@ -1,0 +1,1 @@
+import{a5 as r,c as a,a6 as n,a7 as i}from"./BY3kRY6U.js";var p=new Set(["$$slots","$$events","$$legacy"]),v=i('<svg><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"></path></svg>');function l(t,s){const o=n(s,p);var e=v();r(e,()=>({viewBox:"0 0 24 24",width:"1.2em",height:"1.2em",...o})),a(t,e)}export{l as M};

@@ -1,0 +1,1 @@
+let r=null;function s(){if(r)return r;const t=window.electronAPI?.getAssetServerPort?.();return t&&(r=t),t}function o(t){const n=t.startsWith("/")?t.slice(1):t,e=s();return e?`http://127.0.0.1:${e}/assets/${n}`:`/${n}`}export{o as a};

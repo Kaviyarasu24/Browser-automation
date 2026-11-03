@@ -1,0 +1,1 @@
+.bar.svelte-15wfgep{width:2px;height:var(--bar-height);border-radius:1px;background:oklch(var(--muted-foreground));transition:height var(--bar-ease) linear}.live.svelte-15wfgep .bar:where(.svelte-15wfgep){background:#4ade80}@media(prefers-reduced-motion:reduce){.bar.svelte-15wfgep{transition:none}.live.svelte-15wfgep .bar:where(.svelte-15wfgep){height:6px}}

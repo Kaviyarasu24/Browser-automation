@@ -1,0 +1,1 @@
+import{l as p,B as n,g as u,o as i,s as m,a as g}from"./BY3kRY6U.js";import{g as c}from"./Iii2kHxx.js";import{L as f}from"./DSKVFMZy.js";function C(o,t){p(t,!0);let r=n(t,"basePath",3,"/apps"),a=m(!0);function s(e){g(a,e,!0),e||c(r(),{replaceState:!0})}f(o,{get open(){return u(a)},onOpenChange:s}),i()}export{C as L};

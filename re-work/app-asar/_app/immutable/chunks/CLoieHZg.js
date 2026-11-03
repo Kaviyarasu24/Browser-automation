@@ -1,0 +1,1 @@
+import{p as s,b as t,m as o,s as d,a as I,c as e,i,n as r}from"./BAkvJDmy.js";import{R as c}from"./BPjlHh8g.js";const a=n=>s(d(),o(1),t(n)),C=a("PageId"),b=a("EntryId"),g=a("SlotId"),h=a("PaneId"),u=a("GroupId"),P=a("WindowId"),R=a("ChatId"),l=a("ChatViewId"),w=s(r(),i(),e(0),I(c),t("Ratio"));export{R as C,b as E,u as G,C as P,w as R,g as S,P as W,l as a,h as b};

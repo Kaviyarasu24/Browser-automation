@@ -1,0 +1,1 @@
+import{m as e,P as n}from"./BY3kRY6U.js";const o=Symbol("workspace-layout-context");function r(t){e(o,t)}function s(){const t=n(o);if(!t)throw new Error("Workspace layout context is unavailable");return t}export{s as g,r as p};

@@ -1,0 +1,1 @@
+import{B as a,d as n,r as d,w as l,E as m,C as c,c as p,f}from"./BY3kRY6U.js";import{P as k}from"./LdvM-6Lu.js";var v=f('<div data-testid="workspace-skeleton"><!></div>');function u(t,s){let o=a(s,"rows",3,7),r=a(s,"inset",3,!0);var e=v(),i=n(e);k(i,{label:"Loading workspace items",get items(){return o()}}),d(e),l(()=>m(e,1,c(r()?"mx-4":void 0))),p(t,e)}export{u as W};

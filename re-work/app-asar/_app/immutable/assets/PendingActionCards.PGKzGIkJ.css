@@ -1,0 +1,1 @@
+.queue-actions.svelte-15ipsh1>button:is(:hover,:focus-within)+.queue-divider,.queue-actions.svelte-15ipsh1>.queue-divider:has(+button:is(:hover,:focus-within)){opacity:0}

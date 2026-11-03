@@ -1,0 +1,1 @@
+import{a5 as r,c as o,a6 as l,a7 as p}from"./BY3kRY6U.js";var v=new Set(["$$slots","$$events","$$legacy"]),i=p('<svg><path fill="currentColor" d="M6 4v16a1 1 0 0 0 1.524.852l13-8a1 1 0 0 0 0-1.704l-13-8A1 1 0 0 0 6 4"></path></svg>');function f(a,t){const s=l(t,v);var e=i();r(e,()=>({viewBox:"0 0 24 24",width:"1.2em",height:"1.2em",...s})),o(a,e)}export{f as P};

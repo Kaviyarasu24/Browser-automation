@@ -1,0 +1,1044 @@
+{
+  "fps": 24.0,
+  "animations": {
+    "bow": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 0
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 0
+        },
+        {
+          "frame": 13,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 1
+        },
+        {
+          "frame": 13,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 1
+        },
+        {
+          "frame": 36,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 0
+        },
+        {
+          "frame": 36,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 0
+        }
+      ]
+    },
+    "bow_v2": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 0
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 0
+        },
+        {
+          "frame": 18,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 0
+        },
+        {
+          "frame": 18,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 0
+        },
+        {
+          "frame": 20,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 1
+        },
+        {
+          "frame": 20,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 1
+        },
+        {
+          "frame": 55,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 1
+        },
+        {
+          "frame": 55,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 1
+        },
+        {
+          "frame": 56,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 0
+        },
+        {
+          "frame": 56,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 0
+        }
+      ]
+    },
+    "intro": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.0
+        },
+        {
+          "frame": 0,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.0
+        },
+        {
+          "frame": 0,
+          "type": "headScale",
+          "target": "head",
+          "value": 0.0010000000474974513
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 0
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 0
+        },
+        {
+          "frame": 150,
+          "type": "headScale",
+          "target": "head",
+          "value": 0.0010000000474974513
+        },
+        {
+          "frame": 152,
+          "type": "headScale",
+          "target": "head",
+          "value": 0.10400015115737915
+        },
+        {
+          "frame": 153,
+          "type": "headScale",
+          "target": "head",
+          "value": 0.35199999809265137
+        },
+        {
+          "frame": 154,
+          "type": "headScale",
+          "target": "head",
+          "value": 0.6480000019073486
+        },
+        {
+          "frame": 155,
+          "type": "headScale",
+          "target": "head",
+          "value": 0.8960000276565552
+        },
+        {
+          "frame": 156,
+          "type": "headScale",
+          "target": "head",
+          "value": 1.0
+        },
+        {
+          "frame": 161,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.0
+        },
+        {
+          "frame": 161,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.0
+        },
+        {
+          "frame": 171,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.051379814743995667
+        },
+        {
+          "frame": 171,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.051379814743995667
+        },
+        {
+          "frame": 172,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.10400015115737915
+        },
+        {
+          "frame": 172,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.10400015115737915
+        },
+        {
+          "frame": 173,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.1802065372467041
+        },
+        {
+          "frame": 173,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.1802065372467041
+        },
+        {
+          "frame": 174,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.35199999809265137
+        },
+        {
+          "frame": 174,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.35199999809265137
+        },
+        {
+          "frame": 175,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.6480000019073486
+        },
+        {
+          "frame": 175,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.6480000019073486
+        },
+        {
+          "frame": 176,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.8960000276565552
+        },
+        {
+          "frame": 176,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 0.8960000276565552
+        },
+        {
+          "frame": 177,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 1.0
+        },
+        {
+          "frame": 177,
+          "type": "groundShadowSize",
+          "target": "ground_shadow",
+          "value": 1.0
+        },
+        {
+          "frame": 220,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 0
+        },
+        {
+          "frame": 220,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 0
+        },
+        {
+          "frame": 221,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 1
+        },
+        {
+          "frame": 221,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 1
+        },
+        {
+          "frame": 252,
+          "type": "textureFrame",
+          "target": "eye.L",
+          "value": 0
+        },
+        {
+          "frame": 252,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 0
+        }
+      ]
+    },
+    "reading-DISENGAGE": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -1.0,
+            "x": 0.0
+          }
+        },
+        {
+          "frame": 0,
+          "type": "headTracking",
+          "target": "head",
+          "enabled": false
+        },
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "book",
+          "visible": true,
+          "socket": "free"
+        },
+        {
+          "frame": 1,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.9949363470077515
+          }
+        },
+        {
+          "frame": 2,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.9803240299224854
+          }
+        },
+        {
+          "frame": 3,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.9570311307907104
+          }
+        },
+        {
+          "frame": 4,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.9259257316589355
+          }
+        },
+        {
+          "frame": 5,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.8878758549690247
+          }
+        },
+        {
+          "frame": 6,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.8437495827674866
+          }
+        },
+        {
+          "frame": 7,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.7944149971008301
+          }
+        },
+        {
+          "frame": 8,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.7407401204109192
+          }
+        },
+        {
+          "frame": 9,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.6835930347442627
+          }
+        },
+        {
+          "frame": 10,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.6238418221473694
+          }
+        },
+        {
+          "frame": 11,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.5623545050621033
+          }
+        },
+        {
+          "frame": 12,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.49999913573265076
+          }
+        },
+        {
+          "frame": 13,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.43764379620552063
+          }
+        },
+        {
+          "frame": 14,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.3761565089225769
+          }
+        },
+        {
+          "frame": 15,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.31640535593032837
+          }
+        },
+        {
+          "frame": 15,
+          "type": "propVisibility",
+          "target": "book",
+          "visible": false
+        },
+        {
+          "frame": 16,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.2592584192752838
+          }
+        },
+        {
+          "frame": 17,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.20558373630046844
+          }
+        },
+        {
+          "frame": 18,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.15624937415122986
+          }
+        },
+        {
+          "frame": 19,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.11212335526943207
+          }
+        },
+        {
+          "frame": 20,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.07407371699810028
+          }
+        },
+        {
+          "frame": 21,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.042968522757291794
+          }
+        },
+        {
+          "frame": 22,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.019675815477967262
+          }
+        },
+        {
+          "frame": 23,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.005063628777861595
+          }
+        },
+        {
+          "frame": 24,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": 0.0,
+            "x": 0.0
+          }
+        }
+      ]
+    },
+    "reading-ENGAGE": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        },
+        {
+          "frame": 0,
+          "type": "headTracking",
+          "target": "head",
+          "enabled": false
+        },
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "book",
+          "visible": true
+        },
+        {
+          "frame": 1,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.009973539970815182
+          }
+        },
+        {
+          "frame": 2,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.03826582431793213
+          }
+        },
+        {
+          "frame": 3,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.08243435621261597
+          }
+        },
+        {
+          "frame": 4,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.14003662765026093
+          }
+        },
+        {
+          "frame": 5,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.20863012969493866
+          }
+        },
+        {
+          "frame": 6,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.2857723832130432
+          }
+        },
+        {
+          "frame": 7,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.36902090907096863
+          }
+        },
+        {
+          "frame": 8,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.45593321323394775
+          }
+        },
+        {
+          "frame": 9,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.5440667867660522
+          }
+        },
+        {
+          "frame": 10,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.630979061126709
+          }
+        },
+        {
+          "frame": 11,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.714227557182312
+          }
+        },
+        {
+          "frame": 12,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.7913697957992554
+          }
+        },
+        {
+          "frame": 13,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.8599632978439331
+          }
+        },
+        {
+          "frame": 14,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.9175655841827393
+          }
+        },
+        {
+          "frame": 15,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.9617341160774231
+          }
+        },
+        {
+          "frame": 16,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -0.9900263547897339
+          }
+        },
+        {
+          "frame": 17,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "x": 0.0,
+            "y": -1.0
+          }
+        },
+        {
+          "frame": 17,
+          "type": "propVisibility",
+          "target": "book",
+          "visible": true,
+          "socket": "free"
+        }
+      ]
+    },
+    "reading-LOOP": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "headLook",
+          "target": "head",
+          "position": {
+            "y": -1.0,
+            "x": 0.0
+          }
+        },
+        {
+          "frame": 0,
+          "type": "headTracking",
+          "target": "head",
+          "enabled": false
+        },
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "book",
+          "visible": true,
+          "socket": "free"
+        }
+      ]
+    },
+    "thinking-DISENGAGE": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 2
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eyebrow.L",
+          "value": 3
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eyebrow.R",
+          "value": 1
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "mouth",
+          "value": 2
+        }
+      ]
+    },
+    "thinking-ENGAGE": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "offset",
+          "target": "eyebrow.left",
+          "position": {
+            "x": 0.0,
+            "y": 0.06999999284744263
+          }
+        },
+        {
+          "frame": 0,
+          "type": "offset",
+          "target": "eyebrow.right",
+          "position": {
+            "x": 0.0,
+            "y": -0.07000000029802322
+          }
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 2
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eyebrow.L",
+          "value": 3
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eyebrow.R",
+          "value": 1
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "mouth",
+          "value": 2
+        }
+      ]
+    },
+    "thinking-LOOP": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "offset",
+          "target": "eyebrow.left",
+          "position": {
+            "x": 0.0,
+            "y": 0.06999999284744263
+          }
+        },
+        {
+          "frame": 0,
+          "type": "offset",
+          "target": "eyebrow.right",
+          "position": {
+            "x": 0.0,
+            "y": -0.07000000029802322
+          }
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eye.R",
+          "value": 2
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eyebrow.L",
+          "value": 3
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "eyebrow.R",
+          "value": 1
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "mouth",
+          "value": 2
+        }
+      ]
+    },
+    "thumbs_up": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "offset",
+          "target": "mouth",
+          "position": {
+            "x": 0.029999999329447746,
+            "y": 0.0
+          }
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "mouth",
+          "value": 1
+        },
+        {
+          "frame": 14,
+          "type": "offset",
+          "target": "mouth",
+          "position": {
+            "x": 0.029999999329447746,
+            "y": 0.0
+          }
+        },
+        {
+          "frame": 14,
+          "type": "textureFrame",
+          "target": "mouth",
+          "value": 1
+        }
+      ]
+    },
+    "thumbs_up_v2": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "offset",
+          "target": "mouth",
+          "position": {
+            "x": 0.029999999329447746,
+            "y": 0.0
+          }
+        },
+        {
+          "frame": 0,
+          "type": "textureFrame",
+          "target": "mouth",
+          "value": 1
+        },
+        {
+          "frame": 36,
+          "type": "offset",
+          "target": "mouth",
+          "position": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        },
+        {
+          "frame": 36,
+          "type": "textureFrame",
+          "target": "mouth",
+          "value": 0
+        }
+      ]
+    },
+    "reading-loop_v2": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "book",
+          "visible": true,
+          "socket": "free"
+        }
+      ]
+    },
+    "typing-DISENGAGE": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "keyboard",
+          "visible": true,
+          "socket": "free"
+        },
+        {
+          "frame": 16,
+          "type": "propVisibility",
+          "target": "keyboard",
+          "visible": false
+        }
+      ]
+    },
+    "typing-ENGAGE": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "keyboard",
+          "visible": true,
+          "socket": "free"
+        }
+      ]
+    },
+    "typing-LOOP": {
+      "fps": 24.0,
+      "events": [
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "keyboard",
+          "visible": true,
+          "socket": "free"
+        }
+      ]
+    },
+    "mining": {
+      "fps": 24,
+      "events": [
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "legacy_mining",
+          "socket": "free",
+          "visible": true
+        }
+      ]
+    },
+    "searching": {
+      "fps": 24,
+      "events": [
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "legacy_searching",
+          "socket": "free",
+          "visible": true
+        }
+      ]
+    },
+    "reading_original": {
+      "fps": 24,
+      "events": [
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "legacy_reading_original",
+          "socket": "free",
+          "visible": true
+        }
+      ]
+    },
+    "typing_original": {
+      "fps": 24,
+      "events": [
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "legacy_typing_original",
+          "socket": "free",
+          "visible": true
+        }
+      ]
+    },
+    "thinking_original": {
+      "fps": 24,
+      "events": [
+        {
+          "frame": 0,
+          "type": "propVisibility",
+          "target": "legacy_thinking_original",
+          "socket": "free",
+          "visible": true
+        }
+      ]
+    }
+  }
+}

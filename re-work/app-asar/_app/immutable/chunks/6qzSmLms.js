@@ -1,0 +1,1 @@
+import{M as m}from"./hJSl0N-8.js";import{R as h,a as u,d as v,g as w}from"./hJSl0N-8.js";import{h as o,i as t,j as n,a9 as d,c as i}from"./BY3kRY6U.js";function l(r,s){var a=o(),e=t(a);n(e,()=>s.children??d),i(r,a)}export{m as Markdown,h as Renderer,l as Transparent,u as allowlist,m as default,v as denylist,w as getAstNode};

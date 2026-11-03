@@ -1,0 +1,55 @@
+{
+  "headShapes": {
+    "head_cube": "cube",
+    "head_narrow_01": "triangle",
+    "head_oblong": "circle",
+    "head_oval": "circle",
+    "head_round": "circle",
+    "head_square": "square",
+    "head_triangle": "triangle"
+  },
+  "parts": {
+    "hat": {
+      "byShape": {},
+      "byHead": {
+        "head_circle": {
+          "allow": ["none"]
+        },
+        "head_cube": {
+          "allow": ["none"]
+        },
+        "head_hexagon": {
+          "allow": ["none"]
+        },
+        "head_triangle": {
+          "allow": ["none"]
+        }
+      }
+    },
+    "hair": {
+      "byShape": {},
+      "byHead": {
+        "head_circle": {
+          "allow": ["none"]
+        },
+        "head_cube": {
+          "allow": ["none"]
+        },
+        "head_hexagon": {
+          "allow": ["none"]
+        },
+        "head_triangle": {
+          "allow": ["none"]
+        }
+      }
+    },
+    "ear_accessory": {
+      "byShape": {},
+      "byHead": {
+        "head_triangle": {
+          "exclude": ["earrings_hoop", "earrings_big_hoop"]
+        }
+      }
+    }
+  }
+}

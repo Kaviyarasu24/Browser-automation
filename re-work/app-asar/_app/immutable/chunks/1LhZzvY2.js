@@ -1,0 +1,29 @@
+import{_ as ce}from"./Ct5FWWRu.js";import{l as le,s as P,p as z,J as U,g as i,a as s,d as x,v as V,r as v,a8 as A,t as ue,c as _,o as de,w as L,z as B,a2 as fe,D as pe,aa as he,u as ve,f as y}from"./BY3kRY6U.js";import{o as ge}from"./CcfIpG3j.js";import{S as me}from"./8W1_ar5h.js";const we="/_app/immutable/assets/pdf.worker.CLesOks4.mjs";function S(c,g){return Number.isFinite(c)&&c>0?c:g}function G(c){const g=S(c.page.width,1),k=S(c.page.height,1),R=Math.max(1,Math.floor(S(c.containerWidth,1)-Math.max(0,c.horizontalPadding))),l=Math.min(2,Math.max(1,S(c.devicePixelRatio,1))),f=R/g,u=Math.max(1,Math.round(g*f)),d=Math.max(1,Math.round(k*f));return{scale:f,outputScale:l,cssWidth:u,cssHeight:d,pixelWidth:Math.max(1,Math.round(u*l)),pixelHeight:Math.max(1,Math.round(d*l))}}const xe="text/javascript";let E=null;var be=y('<div class="flex h-full items-center justify-center"><!></div>'),Pe=y('<div class="flex h-full items-center justify-center px-5 text-center"><p class="text-sm text-neutral-300"> </p></div>'),_e=y('<div class="overflow-hidden rounded-[3px] bg-white shadow-[0_10px_32px_rgba(0,0,0,0.36)] ring-1 ring-black/20"><canvas class="block bg-white"></canvas></div>'),ye=y('<div class="mx-auto flex w-full flex-col items-center gap-4 px-4 py-4"></div>'),Me=y('<div class="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 rounded-md bg-black/65 px-2 py-1 text-[11px] font-medium text-white/90 shadow-sm"> </div>'),ke=y('<div data-testid="artifact-pdf-view" class="flex-1 min-h-0 relative overflow-hidden bg-neutral-950 text-neutral-100"><div data-testid="artifact-pdf-scroll" class="h-full overflow-auto overscroll-contain"><!></div> <!></div>');function De(c,g){le(g,!0);const k=32,R=320;let l=null,f=P(z([])),u=null,d=0,p=0;const W=new Map;let I=P(null),b=P(z([])),h=P("loading"),C=P("Could not load PDF preview"),N=P(R);function H(){const e=l?.clientWidth??0;s(N,e>0?e:R,!0)}function T(){for(const e of W.values())e.cancel();W.clear()}function F(){d+=1,p+=1,T(),u&&(u.destroy().catch(()=>{}),u=null),s(I,null),s(b,[],!0),s(f,[],!0)}async function J(){q();const e=await ce(()=>import("./BqwFzHYL.js"),[],import.meta.url);return e.GlobalWorkerOptions.workerSrc=$(),e}function q(){K(),Y()}function K(){"sumPrecise"in Math||Object.defineProperty(Math,"sumPrecise",{configurable:!0,writable:!0,value(e){let t=0;for(const r of e)t+=r;return t}})}function Y(){"getOrInsertComputed"in Map.prototype||Object.defineProperty(Map.prototype,"getOrInsertComputed",{configurable:!0,writable:!0,value:Z})}function Z(e,t){if(this.has(e))return this.get(e);const r=t(e);return this.set(e,r),r}function $(){if(E)return E;const e=new URL(we,window.location.href).href,t=`
+if (!Math.sumPrecise) {
+  Math.sumPrecise = (values) => {
+    let sum = 0
+    for (const value of values) {
+      sum += value
+    }
+    return sum
+  }
+}
+
+if (!Map.prototype.getOrInsertComputed) {
+  Object.defineProperty(Map.prototype, 'getOrInsertComputed', {
+    configurable: true,
+    writable: true,
+    value(key, createValue) {
+      if (this.has(key)) {
+        return this.get(key)
+      }
+
+      const value = createValue(key)
+      this.set(key, value)
+      return value
+    }
+  })
+}
+
+await import(${JSON.stringify(e)})
+`;return E=URL.createObjectURL(new Blob([t],{type:xe})),E}async function Q(e){const t=[];for(let r=1;r<=e.numPages;r+=1){const a=await e.getPage(r),n=a.getViewport({scale:1});a.cleanup(),t.push({pageNumber:r,width:n.width,height:n.height})}return t}async function X(e,t){s(h,"loading"),s(C,"Could not load PDF preview");try{const r=await J();if(t!==d)return;const a=r.getDocument({url:e,isImageDecoderSupported:!1});u=a;const n=await a.promise;if(t!==d)return;const o=await Q(n);if(t!==d)return;s(I,n,!0),s(b,o,!0),s(h,"ready")}catch{if(t!==d)return;u?.destroy().catch(()=>{}),u=null,s(h,"error"),s(C,"Could not load PDF preview")}}async function ee(e,t,r,a){const n=i(f)[t.pageNumber];if(!n)return;const o=G({page:t,containerWidth:r,horizontalPadding:k,devicePixelRatio:window.devicePixelRatio});n.width=o.pixelWidth,n.height=o.pixelHeight,n.style.width=`${o.cssWidth}px`,n.style.height=`${o.cssHeight}px`;const m=n.getContext("2d");if(!m)throw new Error("Canvas rendering is unavailable");m.setTransform(o.outputScale,0,0,o.outputScale,0,0),m.clearRect(0,0,o.cssWidth,o.cssHeight);const w=await e.getPage(t.pageNumber);if(a!==p){w.cleanup();return}const M=w.getViewport({scale:o.scale}),D=w.render({canvas:null,canvasContext:m,viewport:M});W.set(t.pageNumber,D);try{await D.promise}finally{W.delete(t.pageNumber),w.cleanup()}}async function te(e,t,r,a){for(const n of t){if(a!==p)return;await ee(e,n,r,a)}}ge(()=>{if(H(),typeof ResizeObserver>"u")return;const e=new ResizeObserver(H);return l&&e.observe(l),()=>{e.disconnect()}}),U(()=>{const e=g.url;return F(),X(e,d),()=>{F()}}),U(()=>{const e=i(I),t=i(b),r=i(N);if(i(h)!=="ready"||!e||t.length===0)return;p+=1,T();const a=p;return te(e,t,r,a).catch(n=>{a===p&&(n instanceof Error&&n.name==="RenderingCancelledException"||(s(h,"error"),s(C,"Could not render PDF preview")))}),()=>{a===p&&(p+=1,T())}});var j=ke(),O=x(j),re=x(O);{var ae=e=>{var t=be(),r=x(t);me(r,{class:"size-5 text-white/80",label:"Loading PDF"}),v(t),_(e,t)},ne=e=>{var t=Pe(),r=x(t),a=x(r,!0);v(r),v(t),L(()=>B(a,i(C))),_(e,t)},ie=e=>{var t=ye();fe(t,21,()=>i(b),r=>r.pageNumber,(r,a)=>{const n=ve(()=>G({page:i(a),containerWidth:i(N),horizontalPadding:k,devicePixelRatio:1}));var o=_e();let m;var w=x(o);A(w,(M,D)=>i(f)[D.pageNumber]=M,M=>i(f)?.[M.pageNumber],()=>[i(a)]),v(o),L(()=>{m=pe(o,"",m,{width:`${i(n).cssWidth}px`,"min-height":`${i(n).cssHeight}px`}),he(w,"aria-label",`Page ${i(a).pageNumber}`)}),_(r,o)}),v(t),_(e,t)};V(re,e=>{i(h)==="loading"?e(ae):i(h)==="error"?e(ne,1):e(ie,-1)})}v(O),A(O,e=>l=e,()=>l);var oe=ue(O,2);{var se=e=>{var t=Me(),r=x(t);v(t),L(()=>B(r,`${i(b).length??""} pages`)),_(e,t)};V(oe,e=>{i(h)==="ready"&&i(b).length>1&&e(se)})}v(j),_(c,j),de()}export{De as default};

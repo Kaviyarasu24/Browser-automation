@@ -1,0 +1,1 @@
+function t(){if(typeof window>"u")return!1;if(window.electronAPI?.getWindowId?.().startsWith("onboarding:"))return!0;const n=window.location?.pathname??"";return n==="/onboarding"||n.startsWith("/onboarding/")}export{t as i};

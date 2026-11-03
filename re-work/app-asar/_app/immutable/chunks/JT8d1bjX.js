@@ -1,0 +1,1 @@
+function e(t){const s=t.split(/[\\/]/).pop()??t,n=s.lastIndexOf(".");return n<=0||n>=s.length-1?!1:/[a-z]/i.test(s.slice(n+1))}function o(t,s){const n=s.trim().replace(/^\./,"").toLowerCase();return!t||!n||e(t)?t:`${t}.${n}`}export{o as a};

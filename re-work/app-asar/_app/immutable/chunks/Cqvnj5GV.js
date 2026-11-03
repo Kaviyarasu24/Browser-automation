@@ -1,0 +1,1 @@
+import{g as e,a as p,u,s as i}from"./BY3kRY6U.js";import{s as c}from"./DvmuQC7i.js";function f(n){let t=i(!1);const a=u(()=>n().isExpanded??e(t));function s(r){c();const d=n().onExpandedChange;if(d){d(r);return}p(t,r,!0)}function o(){s(!e(a))}return{get expanded(){return e(a)},setExpanded:s,toggle:o}}export{f as c};

@@ -1,0 +1,1 @@
+function r(e,n){return e.some(s=>s.id===n||s.sourceMessageIds?.includes(n))}function u(e,n){return e.findIndex(s=>s.user?.id===n||s.user?.sourceMessageIds?.includes(n)||s.assistantMessages.some(i=>i.id===n||i.sourceMessageIds?.includes(n)))}export{u as findAnchorTurnIndex,r as isAnchorResident};

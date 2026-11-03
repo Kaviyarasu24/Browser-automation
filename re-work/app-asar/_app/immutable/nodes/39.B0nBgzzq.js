@@ -1,0 +1,1 @@
+import{n as o,c as r,q as i,$ as n,d as s,f as c,r as d}from"../chunks/BY3kRY6U.js";import{G as m}from"../chunks/CmCMx4bD.js";var f=c('<div class="h-screen min-h-0 bg-background text-foreground"><!></div>');function y(t){var a=f();o("etyypt",p=>{i(()=>{n.title="Gia Activity Memory"})});var e=s(a);m(e,{}),d(a),r(t,a)}export{y as component};

@@ -1,0 +1,1 @@
+import{g as e}from"./CPz5awnn.js";import{b as t}from"./CYwgwZNi.js";import{navigateAppRouteInCurrentTab as a,navigateAppRouteInNewTab as i}from"./Bvj-7NSb.js";function r(n){return t(n)}async function p(n){return r(n)?a(e(n)):null}async function b(n){return r(n)?i(e(n)):null}export{p as a,b as o};

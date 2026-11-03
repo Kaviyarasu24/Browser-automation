@@ -1,0 +1,1 @@
+import{l as p,a1 as m,h as n,i as d,at as f,c as g,o as l,g as u,e as c}from"../chunks/BY3kRY6U.js";import{p as e}from"../chunks/BkiPd5Ji.js";import{R as _}from"../chunks/D5zm5PTp.js";function k(s,t){p(t,!1),m();var a=n(),r=d(a);f(r,()=>e.params.id,o=>{{let i=c(()=>e.params.id??"");_(o,{get routineId(){return u(i)}})}}),g(s,a),l()}export{k as component};

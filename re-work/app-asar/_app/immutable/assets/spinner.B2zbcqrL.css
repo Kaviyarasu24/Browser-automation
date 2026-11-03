@@ -1,0 +1,1 @@
+.spinner-delayed{opacity:0;animation:spinner-spin 1s linear infinite,spinner-reveal 1ms linear .15s forwards}@media(prefers-reduced-motion:reduce){.spinner-delayed{animation:spinner-reveal 1ms linear .15s forwards}}@keyframes spinner-spin{to{transform:rotate(360deg)}}@keyframes spinner-reveal{to{opacity:1}}

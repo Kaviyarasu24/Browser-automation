@@ -1,0 +1,1 @@
+import{b as n}from"./CPz5awnn.js";const e="/first-week",i=n(e);function c(t){return t!==void 0&&t.lastShownAt===0&&s(t.url)}function s(t){try{const r=new URL(t);return r.protocol!=="strawberry:"?!1:(r.hostname==="-"?r.pathname:`/${r.hostname}${r.pathname}`).replace(/\/+$/,"")===e}catch{return!1}}export{i as F,c as i};

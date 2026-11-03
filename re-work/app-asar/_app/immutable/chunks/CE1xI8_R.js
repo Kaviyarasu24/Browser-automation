@@ -1,0 +1,1 @@
+import{l as t,B as p,af as f,o as l,a6 as n}from"./BY3kRY6U.js";import{F as u}from"./CTLiiCxV.js";var _=new Set(["$$slots","$$events","$$legacy","ref"]);function v(a,r){t(r,!0);let e=p(r,"ref",15,null),o=n(r,_);u(a,f(()=>o,{"data-popover-arrow":"",get ref(){return e()},set ref(s){e(s)}})),l()}export{v as P};

@@ -1,0 +1,1 @@
+import{h as s,i as n,j as i,c as d}from"../chunks/BY3kRY6U.js";import{S as l}from"../chunks/OCYRmYvc.js";function f(a,r){l(a,{usePointerCursor:!1,width:"roomy",children:(t,m)=>{var o=s(),e=n(o);i(e,()=>r.children),d(t,o)},$$slots:{default:!0}})}export{f as component};

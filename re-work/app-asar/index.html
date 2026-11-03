@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: file: strawberry: https: *.ytimg.com http://localhost:* http://127.0.0.1:* crx:; frame-src strawberry: http://localhost:* http://127.0.0.1:* https://www.youtube.com https://www.youtube-nocookie.com https://customer-rn02o8l4w1fgt0lf.cloudflarestream.com; object-src strawberry:; media-src 'self' https://strawberrybrowser.com http://localhost:* http://127.0.0.1:*; connect-src 'self' blob: strawberry: http://localhost:* http://127.0.0.1:* ws://localhost:* ws://127.0.0.1:* https://o4509867018158080.ingest.de.sentry.io https://www.gstatic.com https://*.r2.cloudflarestorage.com;"
+    />
+    <title>Strawberry</title>
+    <script>
+      // The native shell already resolved these profile tokens. Apply them in the
+      // document head so CSS cannot paint the default hue before renderer state loads.
+      {
+        const initialTheme = window.electronAPI?.getInitialTheme?.() ?? 'dark'
+        document.documentElement.classList.toggle('dark', initialTheme === 'dark')
+        document.documentElement.style.colorScheme = initialTheme
+        const initialProfileTheme = window.electronAPI?.getInitialProfileTheme?.()
+        if (initialProfileTheme) {
+          document.documentElement.style.setProperty('--theme-hue', String(initialProfileTheme.hue))
+          document.documentElement.style.setProperty(
+            '--theme-chroma',
+            String(initialProfileTheme.chroma)
+          )
+        }
+      }
+
+      // Onboarding opens on the dark welcome stage. Mark it before anything paints so a slow load
+      // shows black, never the light theme, until the onboarding layout draws its own background.
+      if (location.pathname.startsWith('/onboarding')) {
+        document.documentElement.classList.add('onboarding-boot')
+      }
+
+      // Polyfill crypto.randomUUID for non-secure contexts (app:// protocol)
+      if (typeof crypto !== 'undefined' && !crypto.randomUUID) {
+        crypto.randomUUID = function () {
+          return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+            (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
+          )
+        }
+      }
+    </script>
+    <link href="/_app/immutable/entry/start.DdsieZ5X.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/Iii2kHxx.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/CcfIpG3j.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/BY3kRY6U.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/CcM0Gbd1.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/B26qZVl3.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/C67WW66Z.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/B-dksMZM.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/CSELFE3-.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/CMWLj2Ff.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/-UyI9lYi.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/BBX6cG0N.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/B0XwC4Ot.js" rel="modulepreload">
+		<link href="/_app/immutable/entry/app.CpaeoSEK.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/Ct5FWWRu.js" rel="modulepreload">
+		<link href="/_app/immutable/nodes/0.VLVarn1g.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/CTQh_rkg.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/IjCjKoYp.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/COtD_KUW.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/D6ASLzNK.js" rel="modulepreload">
+		
+		<link href="/_app/immutable/assets/0.HLiyPSQj.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div id="app">
+			<script>
+				{
+					__sveltekit_1us1a1e = {
+						base: ""
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/_app/immutable/entry/start.DdsieZ5X.js"),
+						import("/_app/immutable/entry/app.CpaeoSEK.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

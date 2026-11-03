@@ -1,0 +1,1 @@
+import{G as o}from"./rVY3OlPy.js";function i(r){if(r===o)return"Global Memories";let e=r;return e.endsWith(".md")&&(e=e.slice(0,-3)),e=e.replace(/[-_]+/g," "),e=e.replace(/\b\w/g,t=>t.toUpperCase()),e}export{i as f};

@@ -1,0 +1,1 @@
+import{r as e}from"../chunks/IKQcdn9t.js";import{n as t,q as o,$ as a}from"../chunks/BY3kRY6U.js";const n=()=>e(307,"/settings/theme"),p=Object.freeze(Object.defineProperty({__proto__:null,load:n},Symbol.toStringTag,{value:"Module"}));function m(r){t("nfimwt",c=>{o(()=>{a.title="Appearance"})})}export{m as component,p as universal};

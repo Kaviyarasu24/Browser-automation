@@ -1,0 +1,313 @@
+{
+  "name": "strawberry",
+  "version": "1.0.5",
+  "description": "Strawberry Browser",
+  "main": "./out/main/index.js",
+  "author": "Strawberry Browser Inc.",
+  "homepage": "https://strawberrybrowser.com",
+  "exports": {
+    ".": "./out/main/index.js",
+    "./spreadsheet/locale": "./src/shared/spreadsheet/locale.ts",
+    "./workspace/layout-transition": "./src/shared/workspace/workspace-layout-transition.ts",
+    "./workspace/types": "./src/shared/workspace/workspace.types.ts",
+    "./workspace/layout-model": "./src/shared/layout/derive/model.ts",
+    "./workspace/layout": "./src/shared/workspace/workspace-layout.ts"
+  },
+  "dependencies": {
+    "@breezystack/lamejs": "1.2.7",
+    "@electron-toolkit/utils": "^3.0.0",
+    "@ghostery/adblocker-electron": "^2.17.3",
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "@napi-rs/image": "^1.14.0",
+    "@parcel/watcher": "^2.5.6",
+    "@reflect/activity-memory": "workspace:*",
+    "@reflect/address-bar": "workspace:*",
+    "@reflect/analytics-contracts": "workspace:*",
+    "@reflect/async": "workspace:*",
+    "@reflect/attachments": "workspace:*",
+    "@reflect/auth": "workspace:*",
+    "@reflect/benchmarks": "workspace:*",
+    "@reflect/billing-contracts": "workspace:*",
+    "@reflect/billing-policy": "workspace:*",
+    "@reflect/browser-workspace": "workspace:*",
+    "@reflect/cache": "workspace:*",
+    "@reflect/chat-context": "workspace:*",
+    "@reflect/chat-loop": "workspace:*",
+    "@reflect/chat-media": "workspace:*",
+    "@reflect/chat-media-processing": "workspace:*",
+    "@reflect/chat-memory": "workspace:*",
+    "@reflect/chat-policy": "workspace:*",
+    "@reflect/chat-protocol": "workspace:*",
+    "@reflect/chat-session": "workspace:*",
+    "@reflect/chat-transcript": "workspace:*",
+    "@reflect/chatgpt-plan": "workspace:*",
+    "@reflect/companions": "workspace:*",
+    "@reflect/companion-profile": "workspace:*",
+    "@reflect/conduits": "workspace:*",
+    "@reflect/connectors": "workspace:*",
+    "@reflect/content-contracts": "workspace:*",
+    "@reflect/eval-app-runtime": "workspace:*",
+    "@reflect/feature-flags": "workspace:*",
+    "@reflect/feedback-contracts": "workspace:*",
+    "@reflect/file-types": "workspace:*",
+    "@reflect/html-formatting": "workspace:*",
+    "@reflect/in-app-message-contracts": "workspace:*",
+    "@reflect/integration-contracts": "workspace:*",
+    "@reflect/legal": "workspace:*",
+    "@reflect/models": "workspace:*",
+    "@reflect/notifications": "workspace:*",
+    "@reflect/privacy": "workspace:*",
+    "@reflect/sandbox-contracts": "workspace:*",
+    "@reflect/scheduling": "workspace:*",
+    "@reflect/security": "workspace:*",
+    "@reflect/skill-contracts": "workspace:*",
+    "@reflect/skills": "workspace:*",
+    "@reflect/optmem": "workspace:*",
+    "@reflect/excelize-wasm": "workspace:*",
+    "@reflect/synced-fs": "workspace:*",
+    "@reflect/synced-fs-contracts": "workspace:*",
+    "@reflect/teams": "workspace:*",
+    "@reflect/telemetry": "workspace:*",
+    "@reflect/tool-contracts": "workspace:*",
+    "@resvg/resvg-js": "2.6.2",
+    "@sentry/electron": "7.14.0",
+    "@sentry/node-native": "10.60.0",
+    "@sentry/node-native-stacktrace": "0.5.1",
+    "@valibot/to-json-schema": "1.7.1",
+    "ai": "7.0.83",
+    "asn1js": "^3.0.6",
+    "async-lock": "^1.4.1",
+    "async-mutex": "^0.5.0",
+    "better-sqlite3": "13.0.3",
+    "cheerio": "^1.1.2",
+    "cross-spawn": "^7.0.6",
+    "csv-parse": "^7.0.2",
+    "culori": "^4.0.2",
+    "drizzle-orm": "1.0.0-rc.4",
+    "electron-chrome-web-store": "npm:@iamevan/electron-chrome-web-store@0.13.5",
+    "electron-dl": "^4.0.0",
+    "electron-updater": "^6.8.9",
+    "esbuild-wasm": "0.28.1",
+    "exifr": "7.1.3",
+    "fast-xml-parser": "^5.3.6",
+    "fastest-levenshtein": "^1.0.16",
+    "fzstd": "^0.1.1",
+    "heic-decode": "^2.1.0",
+    "istextorbinary": "^9.5.0",
+    "js-beautify": "^2.0.3",
+    "js-yaml": "^4.1.0",
+    "jszip": "^3.10.1",
+    "lodash": "^4.17.21",
+    "lz4js": "^0.2.0",
+    "marked": "^15.0.12",
+    "mime-types": "^3.0.2",
+    "node-html-parser": "^6.1.13",
+    "node-machine-id": "1.1.12",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "6.2.108",
+    "piscina": "^5.3.2",
+    "re2js": "2.8.6",
+    "run-jxa": "^3.0.0",
+    "sqlite-vec": "0.1.9",
+    "tar": "^7.5.21",
+    "tiktoken": "^1.0.22",
+    "tldts": "^6.1.86",
+    "tokenx": "^1.3.0",
+    "tough-cookie": "^6.0.2",
+    "turndown": "^7.2.0",
+    "uiohook-napi": "^1.5.5",
+    "undici": "^7.28.0",
+    "uuid": "^11.1.1",
+    "valibot": "^1.4.2",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+    "yaml": "^2.8.4",
+    "yauzl": "^3.2.1",
+    "@reflect/billing": "workspace:*",
+    "@dendrite-systems/baileys": "https://github.com/dendrite-systems/Baileys/releases/download/v7.0.0-rc14-strawberry.4/dendrite-systems-baileys-7.0.0-rc14-strawberry.4.tgz",
+    "qrcode": "1.5.4"
+  },
+  "optionalDependencies": {
+    "@parcel/watcher-darwin-arm64": "2.5.6",
+    "@parcel/watcher-darwin-x64": "2.5.6",
+    "@primno/dpapi": "^2.0.1",
+    "electron-webauthn": "workspace:*",
+    "objc-js": "^1.0.0",
+    "passkey": "workspace:*"
+  },
+  "strawberry": {
+    "tags": [
+      "kind:app",
+      "scope:browser",
+      "runtime:electron"
+    ]
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "cache": false
+      },
+      "build-renderer-types": {
+        "executor": "nx:run-commands",
+        "dependsOn": [
+          "@reflect/billing-policy:build",
+          "@reflect/address-bar:build",
+          "@reflect/browser-workspace:build",
+          "@reflect/chat-loop:build",
+          "@reflect/chat-session:build",
+          "@reflect/companions:build",
+          "@reflect/conduits:build",
+          "@reflect/skill-contracts:build",
+          "@reflect/synced-fs:build"
+        ],
+        "outputs": [
+          "{workspaceRoot}/.context/typecheck/browser"
+        ],
+        "options": {
+          "cwd": "apps/browser",
+          "command": "tsc -p tsconfig.web.json --emitDeclarationOnly --declaration --declarationMap false --composite false --incremental --tsBuildInfoFile ../../.context/typecheck/browser/tsconfig.tsbuildinfo --outDir ../../.context/typecheck/browser"
+        },
+        "cache": true,
+        "inputs": [
+          "default",
+          "^production"
+        ]
+      },
+      "typecheck": {
+        "dependsOn": [
+          "typecheck:node",
+          "typecheck:enforcement",
+          "typecheck:web"
+        ],
+        "executor": "nx:noop"
+      },
+      "test": {
+        "cache": false,
+        "dependsOn": [
+          "@reflect/address-bar:build",
+          "@reflect/eval-app-runtime:build",
+          "@reflect/browser-workspace:build",
+          "@reflect/chat-loop:build",
+          "@reflect/chat-session:build",
+          "@reflect/companions:build",
+          "@reflect/conduits:build",
+          "@reflect/skill-contracts:build",
+          "@reflect/synced-fs:build"
+        ]
+      },
+      "check:protocol-routes": {
+        "executor": "nx:run-commands",
+        "cache": true,
+        "options": {
+          "cwd": "apps/browser",
+          "command": "tsx scripts/check-protocol-routes.ts"
+        },
+        "inputs": [
+          "{workspaceRoot}/apps/browser/**/*",
+          "^default",
+          "sharedGlobals"
+        ],
+        "outputs": []
+      },
+      "check:browser-imports": {
+        "executor": "nx:run-commands",
+        "cache": true,
+        "options": {
+          "cwd": "apps/browser",
+          "command": "tsx scripts/check-browser-imports.ts"
+        },
+        "inputs": [
+          "{workspaceRoot}/apps/browser/**/*",
+          "^default",
+          "sharedGlobals"
+        ],
+        "outputs": []
+      },
+      "check:webcontents-safety": {
+        "executor": "nx:run-commands",
+        "cache": true,
+        "options": {
+          "cwd": "apps/browser",
+          "command": "tsx scripts/check-webcontents-safety.ts"
+        },
+        "inputs": [
+          "{workspaceRoot}/apps/browser/**/*",
+          "^default",
+          "sharedGlobals"
+        ],
+        "outputs": [],
+        "dependsOn": [
+          "typecheck:node"
+        ]
+      },
+      "check:open-url-routing": {
+        "executor": "nx:run-commands",
+        "cache": true,
+        "options": {
+          "cwd": "apps/browser",
+          "command": "node scripts/check-open-url-routing.mjs"
+        },
+        "inputs": [
+          "{workspaceRoot}/apps/browser/**/*",
+          "^default",
+          "sharedGlobals"
+        ],
+        "outputs": []
+      },
+      "typecheck:node": {
+        "executor": "nx:run-commands",
+        "cache": true,
+        "dependsOn": [
+          "@reflect/billing-policy:build",
+          "@reflect/address-bar:build",
+          "@reflect/eval-app-runtime:build",
+          "@reflect/browser-workspace:build",
+          "@reflect/chat-loop:build",
+          "@reflect/chat-session:build",
+          "@reflect/companions:build",
+          "@reflect/conduits:build",
+          "@reflect/skill-contracts:build",
+          "@reflect/synced-fs:build"
+        ],
+        "inputs": [
+          "default",
+          "^production"
+        ],
+        "outputs": [],
+        "options": {
+          "cwd": "apps/browser",
+          "command": "tsc --noEmit -p tsconfig.node.json --composite false"
+        }
+      },
+      "typecheck:enforcement": {
+        "executor": "nx:run-commands",
+        "cache": true,
+        "dependsOn": [
+          "@reflect/billing-policy:build",
+          "@reflect/address-bar:build",
+          "@reflect/browser-workspace:build",
+          "@reflect/chat-loop:build",
+          "@reflect/chat-session:build",
+          "@reflect/companions:build",
+          "@reflect/conduits:build",
+          "@reflect/skill-contracts:build",
+          "@reflect/synced-fs:build"
+        ],
+        "inputs": [
+          "default",
+          "^production"
+        ],
+        "outputs": [],
+        "options": {
+          "cwd": "apps/browser",
+          "command": "tsc -p tsconfig.enforcement.json"
+        }
+      },
+      "typecheck:web": {
+        "executor": "nx:noop",
+        "dependsOn": [
+          "build-renderer-types"
+        ]
+      }
+    }
+  }
+}

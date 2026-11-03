@@ -1,0 +1,1 @@
+import{l as p,a1 as n,h as m,i as d,at as g,c,o as f,g as l,e as u}from"../chunks/BY3kRY6U.js";import{p as e}from"../chunks/BkiPd5Ji.js";import{M as _}from"../chunks/BDjvrW4G.js";function M(r,s){p(s,!1),n();var a=m(),o=d(a);g(o,()=>e.params.recordingId,t=>{{let i=u(()=>e.params.recordingId??"");_(t,{get recordingId(){return l(i)}})}}),c(r,a),f()}export{M as component};

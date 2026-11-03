@@ -1,0 +1,1 @@
+const n=new Set(["none","idle","intro","yes_sir","bow","reading","thinking","typing"]);function i(e){return!(e.animation!==void 0&&!n.has(e.animation)||e.neverBlink===!0&&e.isStatic!==!0||e.isAnimationHeld===!0)}function r(e){return e.renderer==="legacy"?!1:i(e)}export{r as s};

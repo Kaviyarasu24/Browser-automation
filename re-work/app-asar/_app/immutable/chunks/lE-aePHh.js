@@ -1,0 +1,1 @@
+function a(t,r=700){let e=null;function l(){t.dataset.scrollActive="true",e!==null&&clearTimeout(e),e=setTimeout(()=>{delete t.dataset.scrollActive,e=null},r)}return t.addEventListener("scroll",l,{passive:!0}),{destroy(){e!==null&&clearTimeout(e),delete t.dataset.scrollActive,t.removeEventListener("scroll",l)}}}export{a};

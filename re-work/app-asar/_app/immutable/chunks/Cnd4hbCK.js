@@ -1,0 +1,1 @@
+import{c as a}from"./CbvRScdj.js";import{i as m}from"./DRLWuC-J.js";import{g as n}from"./BwUhhgpU.js";function s(e){const o=(e?a.getCompanionById(e):void 0)??a.selectedCompanion;return{name:o.name,seed:o.visualsSeed??o.id,companionImage:m.isReady?m.getImageUrl(o.companionImage):void 0,color:n(o,"dark")}}export{s as m};

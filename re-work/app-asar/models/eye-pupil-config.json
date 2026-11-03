@@ -1,0 +1,32 @@
+{
+  "defaultPupil": "pupil_0",
+  "eyes": {
+    "eye_cyclops": ["pupil_circle"],
+    "eye_cyclops_lash": ["pupil_circle"],
+    "eye_flat": ["pupil_circle", "pupil_rectangle_standing"],
+    "eye_flat_double_lash": ["pupil_circle"],
+    "eye_round": [
+      "pupil_0",
+      "pupil_cat",
+      "pupil_rectangle_laying",
+      "pupil_rectangle_standing",
+      "pupil_triple",
+      "pupil_heart"
+    ],
+    "eye_round_double_lash": [
+      "pupil_0",
+      "pupil_cat",
+      "pupil_rectangle_laying",
+      "pupil_rectangle_standing",
+      "pupil_triple"
+    ],
+    "eye_round_lash": ["pupil_circle", "pupil_heart"],
+    "eye_sharp": ["pupil_0", "pupil_cat"],
+    "eye_sharper": ["pupil_cat", "pupil_cat_narrow"]
+  },
+  "eyebrowOffset": {
+    "default": 0.33,
+    "eye_cyclops": 0.4,
+    "eye_cyclops_lash": 0.4
+  }
+}

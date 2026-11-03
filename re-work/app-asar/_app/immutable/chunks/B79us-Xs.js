@@ -1,0 +1,1 @@
+function f(c,e,t){const n=new Set(c);for(const o of e){const r=t.x>=o.left&&t.x<=o.left+o.width,a=t.y>=o.top&&t.y<=o.top+o.height;(!r||!a)&&n.add(o.id)}return n}function s(c,e,t){return t==="keyboard"||t==="touch"||c.has(e)}export{f as a,s as c};

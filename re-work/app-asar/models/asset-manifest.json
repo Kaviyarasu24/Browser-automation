@@ -1,0 +1,97 @@
+{
+  "parts": {
+    "body": ["body_0", "Props"],
+    "head": [
+      "head_oval",
+      "head_round",
+      "head_square",
+      "head_narrow_01",
+      "head_oblong",
+      "head_triangle",
+      "head_cube"
+    ],
+    "ear": ["ear_01"],
+    "hat": ["beanie", "goggles", "headband", "headphones", "none", "party", "party_0", "wizard"],
+    "eyes": [
+      "eye_cyclops",
+      "eye_cyclops_lash",
+      "eye_flat",
+      "eye_flat_double_lash",
+      "eye_round",
+      "eye_round_double_lash",
+      "eye_round_lash",
+      "eye_sharp",
+      "eye_sharper"
+    ],
+    "mouth": ["mouth_0", "mouth_1", "mouth_frown", "mouth_smirk", "none"],
+    "pupil": [
+      "pupil_0",
+      "pupil_1",
+      "pupil_bug",
+      "pupil_cat",
+      "pupil_cat_narrow",
+      "pupil_circle",
+      "pupil_heart",
+      "pupil_rectangle_laying",
+      "pupil_rectangle_standing",
+      "pupil_triple"
+    ],
+    "eyebrow": ["eyebrow_0", "eyebrow_1", "none"],
+    "hair": [
+      "ant_antennas",
+      "antenna",
+      "hair_01",
+      "hair_02",
+      "hair_03",
+      "hair_04",
+      "hair_05",
+      "hair_06",
+      "hair_07",
+      "hair_08",
+      "hair_bangs",
+      "hair_bowl",
+      "hair_jeff",
+      "hair_mic",
+      "hair_mullet",
+      "hair_shelley",
+      "hair_snail",
+      "hair_space_buns",
+      "horns",
+      "horns_02",
+      "monk",
+      "none"
+    ],
+    "eye_accessory": [
+      "doctor",
+      "gucci",
+      "heart",
+      "librarian",
+      "nanja",
+      "none",
+      "oval",
+      "pilot",
+      "round",
+      "semi_circle",
+      "speed",
+      "speed_sun",
+      "square",
+      "sun_pointy"
+    ],
+    "ear_accessory": [
+      "earrings_big_hoop",
+      "earrings_double",
+      "earrings_hoop",
+      "earrings_star",
+      "none"
+    ]
+  },
+  "modelFiles": {
+    "eye_quads": ["double_eye", "double_eye_cyclops", "eye_cyclops"],
+    "eye_layouts": {
+      "double_eye": "mirrored",
+      "double_eye_cyclops": "center",
+      "eye_cyclops": "center",
+      "eye_cyclops_lash": "center"
+    }
+  }
+}

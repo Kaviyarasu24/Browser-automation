@@ -1,0 +1,1 @@
+import{f as a}from"./BcO0NJEs.js";function r(e){const t=new Date(e.lastModified).getTime();return Number.isNaN(t)?0:t}function n(e){return[...e].sort((t,s)=>r(s)-r(t))}function i(e){return n(e)[0]??null}function m(e,t=Date.now()){const s=new Date(e).getTime();return Number.isNaN(s)?"Last used recently":`Last used ${a(Math.min(s,t),{now:t})}`}export{m as f,i as g,n as s};

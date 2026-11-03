@@ -1,0 +1,1 @@
+import{h as n,i as s,j as i,c as d}from"../chunks/BY3kRY6U.js";import{S as m}from"../chunks/OCYRmYvc.js";function f(a,t){m(a,{width:"roomy",children:(r,p)=>{var o=n(),e=s(o);i(e,()=>t.children),d(r,o)},$$slots:{default:!0}})}export{f as component};

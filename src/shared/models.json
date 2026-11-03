@@ -1,0 +1,59 @@
+{
+  "models": [
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "displayName": "Nemotron 3 Ultra (free)",
+      "provider": "openrouter",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 32768,
+      "supportsTools": true,
+      "supportsVision": false,
+      "reasoning": true,
+      "isDefault": true
+    },
+    {
+      "id": "openai/gpt-4o-mini",
+      "displayName": "GPT-4o mini",
+      "provider": "openrouter",
+      "contextWindow": 128000,
+      "maxOutputTokens": 16384,
+      "supportsTools": true,
+      "supportsVision": true,
+      "reasoning": false,
+      "isDefault": false
+    },
+    {
+      "id": "openai/gpt-4o",
+      "displayName": "GPT-4o",
+      "provider": "openrouter",
+      "contextWindow": 128000,
+      "maxOutputTokens": 16384,
+      "supportsTools": true,
+      "supportsVision": true,
+      "reasoning": false,
+      "isDefault": false
+    },
+    {
+      "id": "anthropic/claude-sonnet-4.5",
+      "displayName": "Claude Sonnet 4.5",
+      "provider": "openrouter",
+      "contextWindow": 200000,
+      "maxOutputTokens": 64000,
+      "supportsTools": true,
+      "supportsVision": true,
+      "reasoning": true,
+      "isDefault": false
+    },
+    {
+      "id": "google/gemini-2.5-flash",
+      "displayName": "Gemini 2.5 Flash",
+      "provider": "openrouter",
+      "contextWindow": 1048576,
+      "maxOutputTokens": 65536,
+      "supportsTools": true,
+      "supportsVision": true,
+      "reasoning": true,
+      "isDefault": false
+    }
+  ]
+}

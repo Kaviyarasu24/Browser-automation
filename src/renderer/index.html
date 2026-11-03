@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'"
+    />
+    <title>StrawberryLike</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #121212;
+        --panel: #1a1a1a;
+        --panel-2: #212121;
+        --text: #e8e8e8;
+        --muted: #8a8a8a;
+        --accent: #e8455f;
+        --border: #2c2c2c;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; height: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font: 13px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
+      #browser-toolbar {
+        position: fixed;
+        z-index: 10;
+        inset: 0 0 auto;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 8px;
+        background: var(--panel);
+        border-bottom: 1px solid var(--border);
+      }
+      #sidebar {
+        width: 380px;
+        flex: 0 0 380px;
+        margin-top: 44px;
+        height: calc(100vh - 44px);
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        background: var(--panel);
+      }
+      #tabs {
+        display: flex;
+        gap: 4px;
+        padding: 6px;
+        border-bottom: 1px solid var(--border);
+        overflow-x: auto;
+      }
+      .tab {
+        padding: 3px 8px;
+        border-radius: 4px;
+        background: var(--panel-2);
+        color: var(--muted);
+        white-space: nowrap;
+        cursor: pointer;
+        max-width: 130px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .tab.active { color: var(--text); outline: 1px solid var(--accent); }
+      #url {
+        flex: 1;
+        min-width: 0;
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        color: var(--text);
+        padding: 5px 8px;
+        font: inherit;
+      }
+      #messages { flex: 1; overflow-y: auto; padding: 12px; }
+      .msg { margin-bottom: 12px; white-space: pre-wrap; }
+      .msg.user { color: #cfe6ff; }
+      .msg.tool { color: var(--muted); font-family: ui-monospace, Consolas, monospace; font-size: 11px; }
+      .msg.reasoning { color: #7d7d7d; font-style: italic; }
+      .msg.error { color: var(--accent); }
+      #composer { display: flex; gap: 6px; padding: 8px; border-top: 1px solid var(--border); }
+      #input {
+        flex: 1;
+        resize: none;
+        height: 62px;
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        color: var(--text);
+        padding: 6px 8px;
+        font: inherit;
+      }
+      button {
+        background: var(--accent);
+        color: #fff;
+        border: 0;
+        border-radius: 4px;
+        padding: 6px 12px;
+        font: inherit;
+        cursor: pointer;
+      }
+      button.ghost { background: var(--panel-2); color: var(--muted); }
+      #status { padding: 4px 10px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--border); }
+    </style>
+  </head>
+  <body>
+    <div id="browser-toolbar">
+      <input id="url" placeholder="Search or enter a URL" />
+      <button id="go">Go</button>
+    </div>
+    <div id="sidebar">
+      <div id="tabs"></div>
+      <div id="messages"></div>
+      <div id="status">idle</div>
+      <div id="composer">
+        <textarea id="input" placeholder="Ask about this page, or just chat"></textarea>
+        <button id="send">Send</button>
+      </div>
+    </div>
+    <div id="host"></div>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">TechCrunch</title>
+  <rect width="24" height="24" rx="4" fill="#0a9e01" />
+  <path fill="#fff" d="M4.5 6h7v3h-2v9h-3V9h-2V6Zm8 0h7v3h-4v6h4v3h-7V6Z" />
+</svg>

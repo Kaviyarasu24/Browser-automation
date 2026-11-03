@@ -1,0 +1,1 @@
+function c(o){try{window.electronAPI?.clipboard?window.electronAPI.clipboard.writeText(o):navigator.clipboard&&navigator.clipboard.writeText(o).catch(r=>{console.error("Failed to copy to clipboard:",r)})}catch(r){console.error("Failed to copy to clipboard:",r)}}function i(o){c(o)}export{i as c,c as w};

@@ -1,0 +1,98 @@
+{
+  "defaultHatVariant": "normal",
+  "defaultHairMode": "full_hat",
+  "hairs": {
+    "ant_antennas": {
+      "hatVariant": "small"
+    },
+    "antenna": {
+      "hatVariant": "small"
+    },
+    "hair_01": {
+      "hatVariant": "normal"
+    },
+    "hair_02": {
+      "hatVariant": "normal"
+    },
+    "hair_03": {
+      "hatVariant": "small"
+    },
+    "hair_04": {
+      "hatVariant": "normal"
+    },
+    "hair_05": {
+      "hatVariant": "normal"
+    },
+    "hair_06": {
+      "hatVariant": "normal"
+    },
+    "hair_07": {
+      "hatVariant": "normal"
+    },
+    "hair_08": {
+      "hatVariant": "normal"
+    },
+    "hair_bangs": {
+      "hatVariant": "normal"
+    },
+    "hair_bowl": {
+      "hatVariant": "normal"
+    },
+    "hair_jeff": {
+      "hatVariant": "normal"
+    },
+    "hair_mic": {
+      "hatVariant": "normal"
+    },
+    "hair_mullet": {
+      "hatVariant": "normal"
+    },
+    "hair_shelley": {
+      "hatVariant": "normal"
+    },
+    "hair_snail": {
+      "hatVariant": "normal"
+    },
+    "hair_space_buns": {
+      "hatVariant": "normal"
+    },
+    "horns": {
+      "hatVariant": "small"
+    },
+    "horns_02": {
+      "hatVariant": "small"
+    },
+    "monk": {
+      "hatVariant": "small"
+    },
+    "none": {
+      "hatVariant": "small"
+    }
+  },
+  "hats": {
+    "beanie": {
+      "hairMode": "full_hat"
+    },
+    "headband": {
+      "hairMode": "headband"
+    },
+    "goggles": {
+      "hairMode": "headband"
+    },
+    "none": {
+      "hairMode": "none"
+    },
+    "party": {
+      "hairMode": "none"
+    },
+    "party_0": {
+      "hairMode": "none"
+    },
+    "headphones": {
+      "hairMode": "headphones"
+    },
+    "wizard": {
+      "hairMode": "full_hat"
+    }
+  }
+}

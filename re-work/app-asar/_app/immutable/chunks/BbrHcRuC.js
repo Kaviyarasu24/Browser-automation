@@ -1,0 +1,1 @@
+import{l as o,w as i,C as n,E as c,c as l,o as m,d,f,r as p}from"./BY3kRY6U.js";import{S as u}from"./8W1_ar5h.js";import{c as v}from"./9k9xcff1.js";var g=f("<div><!></div>");function b(t,a){o(a,!0);var e=g(),r=d(e);u(r,{get label(){return a.label}}),p(e),i(s=>c(e,1,s),[()=>n(v("flex min-h-64 items-center justify-center text-muted-foreground",a.class))]),l(t,e),m()}export{b as P};

@@ -1,0 +1,177 @@
+{
+  "excludedParts": {
+    "head": [],
+    "eyes": ["eye_round_pupil_triple", "eye_round_double_lash_pupil_triple"],
+    "mouth": ["none"],
+    "hat": ["headphones"],
+    "eyebrow": ["none"],
+    "hair": [],
+    "eye_accessory": [],
+    "ear_accessory": []
+  },
+  "probabilities": {
+    "hat": {
+      "none": 0.8
+    },
+    "eye_accessory": {
+      "none": 0.7,
+      "nanja": 0.04
+    },
+    "ear_accessory": {
+      "none": 0.7
+    },
+    "hair": {
+      "none": 0.1,
+      "hair_snail": 0.01
+    },
+    "eyes": {
+      "eye_round_lash_pupil_heart": 0.005,
+      "eye_round_pupil_heart": 0.005
+    }
+  },
+  "conditionalExclusions": [
+    {
+      "when": {
+        "eyes": ["eye_cyclops*"]
+      },
+      "exclude": {
+        "eye_accessory": ["*"]
+      }
+    }
+  ],
+  "masterRanges": {
+    "head": {
+      "size": {
+        "min": 0.25,
+        "max": 0.65
+      }
+    },
+    "ear": {
+      "zOffset": {
+        "min": -0.06,
+        "max": 0.06
+      }
+    },
+    "eyes": {
+      "x": {
+        "min": 0.4,
+        "max": 0.62
+      },
+      "z": {
+        "min": 0.4,
+        "max": 0.75
+      },
+      "size": {
+        "min": 0.4,
+        "max": 0.65
+      }
+    },
+    "mouth": {
+      "z": {
+        "min": 0.15,
+        "max": 0.35
+      },
+      "size": {
+        "min": 0.32,
+        "max": 0.58
+      }
+    },
+    "pupil": {
+      "size": {
+        "min": 0.24,
+        "max": 0.46
+      }
+    },
+    "eyebrow": {
+      "size": {
+        "min": 0.32,
+        "max": 0.58
+      }
+    },
+    "eye_accessory": {
+      "size": {
+        "min": 0.75,
+        "max": 0.75
+      }
+    }
+  },
+  "overridesByHead": {
+    "head_oblong": {
+      "eyes": {
+        "z": {
+          "min": 0.66,
+          "max": 0.75
+        }
+      }
+    },
+    "head_triangle": {
+      "head": {
+        "size": {
+          "min": 0.3,
+          "max": 0.48
+        }
+      },
+      "eyes": {
+        "x": {
+          "min": 0.4,
+          "max": 0.66
+        },
+        "z": {
+          "min": 0.4,
+          "max": 0.85
+        }
+      }
+    },
+    "head_cube": {
+      "head": {
+        "size": {
+          "min": 0.4,
+          "max": 0.48
+        }
+      },
+      "eyes": {
+        "x": {
+          "min": 0.6,
+          "max": 0.83
+        },
+        "z": {
+          "min": 0.4,
+          "max": 0.85
+        }
+      }
+    }
+  },
+  "presets": {
+    "limited": {
+      "excludedParts": {
+        "head": ["*triangle", "*cube"],
+        "eyes": [
+          "eye_cyclops_*",
+          "eye_round_pupil_rectangle_laying",
+          "eye_round_pupil_heart",
+          "eye_round_double_lash_pupil_*",
+          "eye_sharper_pupil_cat_narrow",
+          "eye_sharper_pupil_cat"
+        ],
+        "mouth": ["none", "mouth_frown"],
+        "hat": ["*"],
+        "eyebrow": [],
+        "hair": [
+          "hair_snail",
+          "horns",
+          "horns.001",
+          "horns_02",
+          "antenna",
+          "ant_antennas",
+          "hair_03",
+          "hair_mullet"
+        ],
+        "eye_accessory": ["nanja"],
+        "ear_accessory": ["*"]
+      },
+      "probabilities": {},
+      "conditionalExclusions": [],
+      "overridesByHead": {}
+    }
+  }
+}

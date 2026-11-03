@@ -1,0 +1,1 @@
+import{b as m}from"./CFbvqTWB.js";function d(){let r=null;return(t,n)=>{if(r?.text===t&&r.emailClient===n)return r.html;const o=m(t,{emailClient:n}),e={text:t,emailClient:n,html:o};return e.html=o.then(l=>(e.html=l,l)),r=e,e.html}}export{d as c};

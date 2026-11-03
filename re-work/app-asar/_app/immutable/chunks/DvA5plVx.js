@@ -1,0 +1,1 @@
+function e(r){if(r.isWebhookTriggered)return{kind:"app",logoUrl:r.integrationLogoUrl,logoPageUrl:r.integrationLogoPageUrl};if(r.isScheduledTask)return r.eventId?{kind:"schedule"}:{kind:"once"}}export{e as c};
