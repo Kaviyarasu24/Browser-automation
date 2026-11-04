@@ -83,6 +83,7 @@ function registerIpc(): void {
     const skills = loadSkills(resolveSkillsDir())
     const boundary = new UntrustedBoundary()
     const manager = tabs
+    let boundaryForChat = boundary
     if (!manager) throw new Error('Tab manager not ready')
 
     const tools = createTools({
@@ -101,7 +102,7 @@ function registerIpc(): void {
       part: (part) => event.sender.send(IPC.chatPart, part),
       done: () => event.sender.send(IPC.chatDone),
       error: (message) => event.sender.send(IPC.chatError, message)
-    })
+    }, boundary)
     return { accepted: true }
   })
 

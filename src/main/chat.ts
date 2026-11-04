@@ -29,11 +29,12 @@ export function runChat(
   req: ChatRequest,
   skillPreamble: string,
   tools: ReturnType<typeof createTools>,
-  sink: ChatSink
+  sink: ChatSink,
+  boundary: UntrustedBoundary
 ): ChatHandle {
   const controller = new AbortController()
   const entry = pickModel(req.modelId ?? getConfig().openRouterModel)
-  const boundary = new UntrustedBoundary()
+  const boundaryForChat = boundary
 
   void (async () => {
     try {

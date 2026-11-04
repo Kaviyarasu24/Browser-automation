@@ -183,9 +183,15 @@ async function boot(): Promise<void> {
   }
 
   renderTabs(await window.api.tabs.state())
+  const updateUrlBar = async () => {
+    const state = await window.api.tabs.state()
+    const active = state.find((t) => t.active)
+    if (active) urlEl.value = active.url
+  }
+  updateUrlBar()
   window.setInterval(async () => {
     if (document.activeElement === urlEl) return
-    renderTabs(await window.api.tabs.state())
+    await updateUrlBar()
   }, 500)
 }
 
