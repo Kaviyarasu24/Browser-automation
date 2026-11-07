@@ -83,7 +83,6 @@ function registerIpc(): void {
     const skills = loadSkills(resolveSkillsDir())
     const boundary = new UntrustedBoundary()
     const manager = tabs
-    let boundaryForChat = boundary
     if (!manager) throw new Error('Tab manager not ready')
 
     const tools = createTools({
@@ -95,7 +94,10 @@ function registerIpc(): void {
       readPageText: (tabId) => manager.readText(tabId),
       listPageLinks: (tabId) => manager.listLinks(tabId),
       listTabs: async () => manager.list(),
-      navigateTab: async (tabId, url) => manager.navigate(tabId, url)
+      navigateTab: async (tabId, url) => manager.navigate(tabId, url),
+      listClickables: (tabId) => manager.listClickables(tabId),
+      clickAt: (tabId, x, y) => manager.clickAt(tabId, x, y),
+      clickByText: (tabId, text) => manager.clickByText(tabId, text)
     })
 
     activeChat = runChat(payload, skillPreamble(skills), tools, {

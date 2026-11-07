@@ -2,6 +2,7 @@ import { tool } from 'ai'
 import { z } from 'zod'
 import { decideExecution } from '../sandbox/policy'
 import { runCommand } from '../sandbox/runner'
+import type { Clickable } from '../tabs'
 import type { UntrustedBoundary } from './untrusted'
 
 /**
@@ -16,6 +17,9 @@ export function createTools(opts: {
   listPageLinks: (tabId: number) => Promise<{ text: string; url: string }[]>
   listTabs: () => Promise<{ id: number; url: string; title: string }[]>
   navigateTab: (tabId: number, url: string) => Promise<void>
+  listClickables: (tabId: number) => Promise<Clickable[]>
+  clickAt: (tabId: number, x: number, y: number) => Promise<unknown>
+  clickByText: (tabId: number, text: string) => Promise<unknown>
 }) {
   return {
     create_tab: tool({
@@ -65,6 +69,42 @@ export function createTools(opts: {
       execute: async ({ tabId }) => {
         const text = await opts.readPageText(tabId)
         return opts.boundary.wrap('page_text', text)
+      }
+    }),
+
+    list_clickable: tool({
+      description:
+        'List the clickable elements on a page with their labels and viewport coordinates. Prefer this over list_page_links when the next step is to click something the way a person would.',
+      inputSchema: z.object({
+        tabId: z.number().int().describe('Tab id from list_tabs')
+      }),
+      execute: async ({ tabId }) => opts.listClickables(tabId)
+    }),
+
+    click_page: tool({
+      description:
+        'Move the visible pointer to a point in the page and click it. Use the coordinates from list_clickable. Prefer click_link when the target has a text label.',
+      inputSchema: z.object({
+        tabId: z.number().int().describe('Tab id from list_tabs'),
+        x: z.number().int().describe('X coordinate from list_clickable'),
+        y: z.number().int().describe('Y coordinate from list_clickable')
+      }),
+      execute: async ({ tabId, x, y }) => {
+        await opts.clickAt(tabId, x, y)
+        return { clicked: true, x, y }
+      }
+    }),
+
+    click_link: tool({
+      description:
+        'Click the element whose visible label matches the given text, by moving the pointer onto it and clicking. This is the preferred navigation method: it never requires inventing a URL.',
+      inputSchema: z.object({
+        tabId: z.number().int().describe('Tab id from list_tabs'),
+        text: z.string().min(1).describe('Visible label of the link or button to click')
+      }),
+      execute: async ({ tabId, text }) => {
+        const result = await opts.clickByText(tabId, text)
+        return result
       }
     }),
 

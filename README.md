@@ -112,12 +112,34 @@ than breaking startup.
 per-session random nonce, so page content cannot close the block early by
 reproducing the delimiter. Page text is *data*; the model is told so explicitly.
 
+## The virtual pointer
+
+The agent navigates by clicking, so the browser shows its own pointer: an SVG
+arrow with an `AI` badge that glides onto a target before the click lands.
+
+It is injected into the page rather than drawn as a separate
+`WebContentsView`. That is forced by the platform: a transparent overlay view
+composited above a tab swallows every mouse event aimed at the page beneath it
+(measured — the overlay received the moves, the page received none), so an
+overlay would make the site unusable for the person watching. Living in the
+page keeps the pointer click-through for free, at the cost of being re-injected
+after each navigation and of being reachable by page CSS. A closed shadow root
+closes that second hole.
+
+`src/main/cursor.ts` owns the pointer; `TabManager` re-injects it on every
+`dom-ready`. `list_clickable` reports what is clickable with coordinates,
+`click_link` finds a target by its visible label, and `click_page` clicks raw
+coordinates for targets that have no label.
+
 ## Dev scripts
 
 | Script | Purpose |
 | --- | --- |
 | `scripts/smoke.cjs` | Boots the app, asserts preload + IPC + DOM rendered. |
 | `scripts/smoke-chat.cjs` | Drives a chat turn, asserts a terminal state reaches the renderer. |
+| `scripts/smoke-click.cjs` | Asserts label matching, click dispatch, and scroll re-location. |
+| `scripts/smoke-cursor.cjs` | Asserts the pointer is painted, click-through, and survives navigation. |
+| `scripts/smoke-cursor-visible.cjs` | Boots the app and asserts the pointer appears with no click. |
 | `scripts/capture.cjs` | Writes `ui-capture.png` of the current window. |
 
 ## Not implemented

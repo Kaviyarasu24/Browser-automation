@@ -43,19 +43,20 @@ export function runChat(
         system: [
           boundary.systemPreamble(),
           'You are an agentic browser assistant. Complete only the user’s current request. ' +
-            'For a web search or page-summary request, use this workflow exactly once: call list_tabs once. ' +
-              'If it returns no tabs, call create_tab first and use the returned id. Then call navigate_tab ' +
-              'on the active tab with a complete URL-encoded URL when navigation is needed, ' +
-              'For a requested link, department, result, or detail page, call list_page_links first and ' +
-              'navigate only to the exact URL returned by that tool. Never invent or modify a URL path. ' +
-              'If no matching link is returned, search Google for the requested page instead. ' +
-              'then call read_page once and answer the user immediately. For a page-opening request, ' +
-              'you may use list_page_links and navigate_tab before the final read_page. Do not call list_tabs repeatedly. ' +
-            'After a successful read_page, do not navigate to another page, investigate links, or start a new task. ' +
-            'If a page is blocked, unavailable, redirected, or does not match the requested subject, report that ' +
-            'fact and stop; never guess a replacement URL. Only perform a follow-up navigation when the user ' +
-            'explicitly asks for that specific page or action. For a request to open a URL, call navigate_tab ' +
-            'directly when the active tab is known, then report that it was opened.',
+            'You must navigate by clicking the page, the way a person would. ' +
+            'Start with list_tabs once; if it returns no tabs, call create_tab first and use the returned id. ' +
+            'To move anywhere — follow a link, open a result, reach a detail page, submit a search — ' +
+            'call list_clickable on the active tab, then click_link with the exact visible label of the ' +
+            'target. Use click_page with coordinates from list_clickable only when a target has no label. ' +
+            'A visible pointer glides onto the element before each click, so click one target at a time. ' +
+            'Never invent, guess, or hand-edit a URL path; click the element that leads there instead. ' +
+            'Use navigate_tab only for the very first load of a search engine when the page has no usable ' +
+            'links yet, or when the user explicitly gives a URL. ' +
+            'After a click, call read_page once to confirm where you landed, then answer the user immediately. ' +
+            'Do not call list_tabs repeatedly, and do not chain further clicks once the request is satisfied. ' +
+            'If a page is blocked, unavailable, redirected, or does not match the requested subject, report ' +
+            'that fact and stop; never guess a replacement URL. Only continue when the user explicitly asks ' +
+            'for that specific next step.',
           skillPreamble
         ]
           .filter(Boolean)
