@@ -88,10 +88,174 @@ const CLICKABLES = `
   return out;
 })()`
 
+/**
+ * Text inputs, textareas and contenteditable regions, described well enough
+ * for the model to pick the right one without guessing.
+ *
+ * Each field is tagged with a `data-vc-field` index so it can be addressed
+ * again by `typeIntoScript` without the model having to invent a CSS selector
+ * or rely on coordinates that go stale as the page scrolls.
+ */
+const FIELDS = `
+(function () {
+  var sel = 'input:not([type=hidden]):not([type=submit]):not([type=button])' +
+            ':not([type=checkbox]):not([type=radio]):not([type=file]):not([type=image])' +
+            ':not([type=reset]), textarea, [contenteditable=""], [contenteditable="true"]';
+  var nodes = document.querySelectorAll(sel);
+  var out = [];
+  var n = 0;
+  for (var i = 0; i < nodes.length; i++) {
+    var el = nodes[i];
+    var r = el.getBoundingClientRect();
+    if (r.width < 8 || r.height < 8) continue;
+    var st = getComputedStyle(el);
+    if (st.visibility === 'hidden' || st.display === 'none' || st.opacity === '0') continue;
+    if (el.disabled || el.readOnly) continue;
+
+    el.setAttribute('data-vc-field', String(n));
+
+    var label = '';
+    var id = el.getAttribute('id');
+    if (id && window.CSS && CSS.escape) {
+      var forLabel = document.querySelector('label[for="' + CSS.escape(id) + '"]');
+      if (forLabel) label = (forLabel.innerText || '').trim();
+    }
+    if (!label && el.closest) {
+      var wrap = el.closest('label');
+      if (wrap) label = (wrap.innerText || '').trim();
+    }
+
+    var form = el.closest ? el.closest('form') : null;
+    var submit = '';
+    if (form) {
+      var sb = form.querySelector('button[type="submit"], input[type="submit"], button:not([type])');
+      if (sb) submit = ((sb.innerText || sb.value || '') + '').trim().replace(/\\s+/g, ' ').slice(0, 40);
+    }
+
+    out.push({
+      field: n,
+      tag: el.tagName,
+      type: (el.getAttribute('type') || (el.isContentEditable ? 'contenteditable' : 'text')).slice(0, 20),
+      name: (el.getAttribute('name') || '').slice(0, 40),
+      id: (id || '').slice(0, 40),
+      placeholder: (el.getAttribute('placeholder') || '').slice(0, 80),
+      ariaLabel: (el.getAttribute('aria-label') || '').slice(0, 80),
+      label: label.replace(/\\s+/g, ' ').slice(0, 80),
+      value: ((el.value || el.textContent || '') + '').trim().slice(0, 60),
+      inForm: !!form,
+      submit: submit,
+      x: Math.round(r.left + r.width / 2),
+      y: Math.round(r.top + r.height / 2)
+    });
+    n++;
+    if (out.length >= 25) break;
+  }
+  return out;
+})()`
+
+/**
+ * Types into a tagged field the way a keyboard would: per-character key
+ * events plus value assignment through the prototype's setter, so frameworks
+ * that track their own state (React, Vue, Svelte) see the change. Assigning
+ * `el.value` alone is invisible to all of them.
+ *
+ * A KeyboardEvent built from an init dictionary ignores `keyCode`, which some
+ * older sites still read, so it is redefined onto the event explicitly.
+ */
+function typeIntoScript(field: number, text: string, submit: boolean): string {
+  return `
+(function () {
+  var el = document.querySelector('[data-vc-field="${field}"]');
+  if (!el) return { ok: false, reason: 'field ${field} is gone; call list_fields again' };
+
+  var keyCodes = { 'Enter': 13, ' ': 32, 'Escape': 27 };
+  function keyEvent(type, key) {
+    var e = new KeyboardEvent(type, { key: key, code: key, bubbles: true, cancelable: true });
+    var kc = keyCodes[key] || (key.length === 1 ? key.toUpperCase().charCodeAt(0) : 0);
+    try { Object.defineProperty(e, 'keyCode', { get: function () { return kc; } }); } catch (x) {}
+    try { Object.defineProperty(e, 'which', { get: function () { return kc; } }); } catch (x) {}
+    return e;
+  }
+
+  el.focus();
+  var isCE = el.isContentEditable;
+  var proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype;
+  var desc = Object.getOwnPropertyDescriptor(proto, 'value');
+  function setValue(v) {
+    if (isCE) { el.textContent = v; return; }
+    if (desc && desc.set) desc.set.call(el, v);
+    else el.value = v;
+  }
+
+  // Select-all then type, which is what a person does in a search box.
+  setValue('');
+  el.dispatchEvent(new Event('input', { bubbles: true }));
+
+  var chars = ${JSON.stringify(text)}.split('');
+  var acc = '';
+  for (var i = 0; i < chars.length; i++) {
+    acc += chars[i];
+    el.dispatchEvent(keyEvent('keydown', chars[i]));
+    el.dispatchEvent(keyEvent('keypress', chars[i]));
+    setValue(acc);
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+    el.dispatchEvent(keyEvent('keyup', chars[i]));
+  }
+  el.dispatchEvent(new Event('change', { bubbles: true }));
+
+  var value = isCE ? (el.textContent || '') : (el.value || '');
+  if (!${submit}) {
+    return { ok: true, field: ${field}, typed: value, submitted: false };
+  }
+
+  el.dispatchEvent(keyEvent('keydown', 'Enter'));
+  el.dispatchEvent(keyEvent('keypress', 'Enter'));
+  el.dispatchEvent(keyEvent('keyup', 'Enter'));
+
+  var form = el.closest ? el.closest('form') : null;
+  return { ok: true, field: ${field}, typed: value, submitted: true, inForm: !!form };
+})()`
+}
+
+/** Press a form's submit control, for engines that ignore Enter on the field. */
+const SUBMIT_FORM = `
+(function () {
+  var el = document.activeElement;
+  if (!el || !el.closest) return { ok: false, reason: 'no focused field' };
+  var form = el.closest('form');
+  if (!form) return { ok: false, reason: 'field is not inside a form' };
+  var btn = form.querySelector('button[type="submit"], input[type="submit"], button:not([type])');
+  if (btn) {
+    btn.click();
+    return { ok: true, how: 'clicked submit button' };
+  }
+  if (typeof form.requestSubmit === 'function') {
+    form.requestSubmit();
+    return { ok: true, how: 'form.requestSubmit()' };
+  }
+  return { ok: false, reason: 'form has no submit control' };
+})()`
+
 export type Clickable = {
   text: string
   tag: string
   href: string | null
+  x: number
+  y: number
+}
+
+export type Field = {
+  field: number
+  tag: string
+  type: string
+  name: string
+  id: string
+  placeholder: string
+  ariaLabel: string
+  label: string
+  value: string
+  inForm: boolean
+  submit: string
   x: number
   y: number
 }
@@ -318,6 +482,64 @@ export class TabManager {
       href: typeof found.href === 'string' ? found.href : null,
       exact: found.exact === true
     }
+  }
+
+  async listFields(id: number): Promise<Field[]> {
+    const tab = this.tabs.get(id)
+    if (!tab) throw new Error(`No such tab: ${id}`)
+    await this.settle(id)
+    const items = await tab.view.webContents.executeJavaScript(FIELDS, true)
+    if (!Array.isArray(items)) return []
+    return items.filter((item): item is Field => typeof item?.field === 'number')
+  }
+
+  /**
+   * Type into a field the way a keyboard would, optionally submitting.
+   *
+   * The pointer is glided onto the field first so the typing is prefaced by
+   * the same visible motion as a click, and the field is focused by a real
+   * click rather than `focus()` alone — some sites only wire up their
+   * handlers on pointerdown.
+   */
+  async typeInto(
+    id: number,
+    field: number,
+    text: string,
+    submit: boolean
+  ): Promise<unknown> {
+    const tab = this.tabs.get(id)
+    if (!tab) throw new Error(`No such tab: ${id}`)
+    await this.settle(id)
+
+    const fields = await this.listFields(id)
+    const target = fields.find((f) => f.field === field)
+    if (!target) {
+      return { ok: false, reason: `No field ${field} on this page; call list_fields again` }
+    }
+
+    await this.glideAndClick(id, target.x, target.y)
+    const before = tab.url
+
+    const result = await tab.view.webContents.executeJavaScript(
+      typeIntoScript(field, text, submit),
+      true
+    )
+
+    if (submit) {
+      // Enter does nothing on some engines' home pages; fall back to the
+      // form's own submit control before reporting failure.
+      await new Promise((r) => setTimeout(r, 250))
+      if (tab.url === before) {
+        const fallback = await tab.view.webContents.executeJavaScript(SUBMIT_FORM, true)
+        if (fallback && fallback.ok) {
+          await this.settle(id)
+          return { ...(result as object), submittedBy: fallback.how }
+        }
+      }
+      await this.settle(id)
+    }
+
+    return result
   }
 
   list(): { id: number; url: string; title: string }[] {

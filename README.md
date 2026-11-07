@@ -11,7 +11,9 @@ Browser 1.0.5. No Strawberry code, assets, or copy is used.
 - Real browsing tabs (`WebContentsView`), each with `contextIsolation`,
   `sandbox`, and no node integration.
 - Agent tools the model can call: `create_tab`, `list_tabs`, `list_page_links`,
-  `navigate_tab`, `read_page`, `run_command`.
+  `list_clickable`, `click_link`, `click_page`, `list_fields`, `type_into`,
+  `read_page`, `run_command`. There is deliberately no `navigate_tab`: the model
+  drives the page by clicking and typing, never by editing a URL.
 - Skills loaded from `skills/<name>/SKILL.md` (Claude-Skills frontmatter).
 - An untrusted-content boundary around page text, so a hostile page cannot
   impersonate a user instruction.
@@ -131,6 +133,27 @@ closes that second hole.
 `click_link` finds a target by its visible label, and `click_page` clicks raw
 coordinates for targets that have no label.
 
+## Searching
+
+The agent has no URL bar and no `navigate_tab` tool. It cannot type an address
+or build a query string, so a search is performed the way a person performs
+one: `list_fields` finds the search box, and `type_into` types the query into
+it character by character and presses Enter.
+
+`list_fields` tags each field with a `data-vc-field` index and reports its
+label, placeholder, `aria-label`, name and enclosing form's submit control, so
+the model picks the right box from the DOM rather than guessing.
+
+Typing writes through the input prototype's `value` setter and emits
+`keydown`/`keypress`/`input`/`keyup` per character. Assigning `el.value`
+directly is invisible to React, Vue and Svelte, which track their own state
+and read the value from their event handlers.
+
+A synthetic `KeyboardEvent` is untrusted, so dispatching Enter does **not**
+trigger a form's default submit action. `type_into` therefore checks whether
+the URL moved and, if not, clicks the form's submit control — the fallback is
+required for correctness, not merely defensive.
+
 ## Dev scripts
 
 | Script | Purpose |
@@ -140,6 +163,8 @@ coordinates for targets that have no label.
 | `scripts/smoke-click.cjs` | Asserts label matching, click dispatch, and scroll re-location. |
 | `scripts/smoke-cursor.cjs` | Asserts the pointer is painted, click-through, and survives navigation. |
 | `scripts/smoke-cursor-visible.cjs` | Boots the app and asserts the pointer appears with no click. |
+| `scripts/smoke-type.cjs` | Asserts field discovery, per-character typing, and Enter fallback. |
+| `scripts/smoke-search.cjs` | Runs a full search against a local server, home page to results. |
 | `scripts/capture.cjs` | Writes `ui-capture.png` of the current window. |
 
 ## Not implemented

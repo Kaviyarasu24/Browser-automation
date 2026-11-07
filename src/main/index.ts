@@ -94,10 +94,11 @@ function registerIpc(): void {
       readPageText: (tabId) => manager.readText(tabId),
       listPageLinks: (tabId) => manager.listLinks(tabId),
       listTabs: async () => manager.list(),
-      navigateTab: async (tabId, url) => manager.navigate(tabId, url),
       listClickables: (tabId) => manager.listClickables(tabId),
       clickAt: (tabId, x, y) => manager.clickAt(tabId, x, y),
-      clickByText: (tabId, text) => manager.clickByText(tabId, text)
+      clickByText: (tabId, text) => manager.clickByText(tabId, text),
+      listFields: (tabId) => manager.listFields(tabId),
+      typeInto: (tabId, field, text, submit) => manager.typeInto(tabId, field, text, submit)
     })
 
     activeChat = runChat(payload, skillPreamble(skills), tools, {

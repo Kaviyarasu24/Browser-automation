@@ -2,7 +2,7 @@ import { tool } from 'ai'
 import { z } from 'zod'
 import { decideExecution } from '../sandbox/policy'
 import { runCommand } from '../sandbox/runner'
-import type { Clickable } from '../tabs'
+import type { Clickable, Field } from '../tabs'
 import type { UntrustedBoundary } from './untrusted'
 
 /**
@@ -16,10 +16,11 @@ export function createTools(opts: {
   readPageText: (tabId: number) => Promise<string>
   listPageLinks: (tabId: number) => Promise<{ text: string; url: string }[]>
   listTabs: () => Promise<{ id: number; url: string; title: string }[]>
-  navigateTab: (tabId: number, url: string) => Promise<void>
   listClickables: (tabId: number) => Promise<Clickable[]>
   clickAt: (tabId: number, x: number, y: number) => Promise<unknown>
   clickByText: (tabId: number, text: string) => Promise<unknown>
+  listFields: (tabId: number) => Promise<Field[]>
+  typeInto: (tabId: number, field: number, text: string, submit: boolean) => Promise<unknown>
 }) {
   return {
     create_tab: tool({
@@ -36,19 +37,6 @@ export function createTools(opts: {
         'List the open browser tabs with their ids, titles and URLs. If the result is empty, create a tab before navigating.',
       inputSchema: z.object({}),
       execute: async () => opts.listTabs()
-    }),
-
-    navigate_tab: tool({
-      description:
-        'Navigate an existing browser tab to a URL. Use this to open a search URL or follow a user-requested link.',
-      inputSchema: z.object({
-        tabId: z.number().int().describe('Tab id from list_tabs'),
-        url: z.string().url().describe('Complete URL to open in the tab')
-      }),
-      execute: async ({ tabId, url }) => {
-        await opts.navigateTab(tabId, url)
-        return { navigated: true, tabId, url }
-      }
     }),
 
     list_page_links: tool({
@@ -104,6 +92,33 @@ export function createTools(opts: {
       }),
       execute: async ({ tabId, text }) => {
         const result = await opts.clickByText(tabId, text)
+        return result
+      }
+    }),
+
+    list_fields: tool({
+      description:
+        'List the text inputs, search boxes and textareas on the page, with their labels, placeholders and field numbers. Use this to find a search box, then pass its field number to type_into.',
+      inputSchema: z.object({
+        tabId: z.number().int().describe('Tab id from list_tabs')
+      }),
+      execute: async ({ tabId }) => opts.listFields(tabId)
+    }),
+
+    type_into: tool({
+      description:
+        'Type text into a field on the page, character by character, then optionally press Enter to submit. This is how a search is performed: find the search box with list_fields, then type the query into it. Never build a search URL by hand.',
+      inputSchema: z.object({
+        tabId: z.number().int().describe('Tab id from list_tabs'),
+        field: z.number().int().describe('Field number from list_fields'),
+        text: z.string().describe('Text to type'),
+        submit: z
+          .boolean()
+          .default(true)
+          .describe('Press Enter after typing (default true). Set false to only fill the field.')
+      }),
+      execute: async ({ tabId, field, text, submit }) => {
+        const result = await opts.typeInto(tabId, field, text, submit)
         return result
       }
     }),
